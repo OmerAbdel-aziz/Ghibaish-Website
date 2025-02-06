@@ -1,10 +1,10 @@
 # University Portal
 
-React
-Supabase
-Tailwind
+Key Features
+Frontend (Student/Public Portal): 
+🏫 Dynamic Content: Course listings, faculty profiles, and event calendars fetched from Supabase.
 
-Currently, two official plugins are available:
+🎓 Responsive Design: Mobile-first layouts using Tailwind CSS + Flowbite components.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔍 Search & Filters: Course search with debounced queries and department filtering.
+ 
