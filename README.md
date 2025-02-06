@@ -1,6 +1,8 @@
 # University Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React
+Supabase
+Tailwind
 
 Currently, two official plugins are available:
 
