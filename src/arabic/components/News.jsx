@@ -37,10 +37,10 @@ const News = ({ isHome = false }) => {
       <div className="border-b border-[#1E1E1E]/20 bg-white mx-auto max-w-[95%] ">
         <div className="bg-white py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row gap-4 items-start md:items-center md:justify-between justify-center w-full">
+            <div className="flex flex-col-reverse md:flex-row gap-4 items-end md:items-center md:justify-between justify-center w-full">
               <a
                 href="/all-news-ar"
-                className="flex-row-reverse gap-2 items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#1E1E1E] rounded-lg hover:bg-[#637C65] focus:ring-4 focus:outline-none focus:ring-blue-300 hidden md:inline-flex relative bottom-0"
+                className="flex-row-reverse gap-2 items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#1E1E1E] rounded-lg hover:bg-[#637C65] focus:ring-4 focus:outline-none focus:ring-blue-300 inline-flex relative bottom-0"
               >
                 اكتشف المزيد
                 <svg
@@ -82,7 +82,7 @@ const News = ({ isHome = false }) => {
                         ? post.content.substring(0, 150) + "..."
                         : post.content
                     }
-                    image={post.image}
+                    imageUrl={post.image_url}
                   />
                 ))
               ) : (

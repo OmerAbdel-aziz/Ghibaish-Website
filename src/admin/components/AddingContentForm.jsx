@@ -13,22 +13,42 @@ const AddingContentForm = () => {
   const [titleEn, setTitleEn] = useState("");
   const [contentEn, setContentEn] = useState("");
   const [error, setError] = useState(null);
+  const [imageFile, setImageFile] = useState(null);
 
   //form subision logic for arabic posts
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!title || !content || !titleEn || !contentEn) {
+    // Updated validation to include image
+    if (!title || !content || !titleEn || !contentEn || !imageFile) {
       toast({
         title: "Error",
-        description: "All fields are required",
-        status: "error",
+        description: "جميع الحقول مطلوبة بما في ذلك الصورة", // Arabic text for "All fields including image are required"
+        variant: "destructive",
       });
       return;
     }
 
     try {
-      // Get max ID from both tables
+      // ==== NEW IMAGE UPLOAD LOGIC ====
+      // Generate unique filename
+      const imageName = `${Date.now()}-${Math.random()
+        .toString(36)
+        .substring(2, 15)}-${imageFile.name}`;
+
+      // Upload image to storage
+      const { error: uploadError } = await supabase.storage
+        .from("news-images")
+        .upload(imageName, imageFile);
+
+      if (uploadError) throw uploadError;
+
+      // Get public URL
+      const {
+        data: { publicUrl },
+      } = await supabase.storage.from("news-images").getPublicUrl(imageName);
+
+      // ==== EXISTING ID LOGIC ====
       const [{ data: arabicData }, { data: newsData }] = await Promise.all([
         supabase
           .from("ArabicNews")
@@ -46,34 +66,49 @@ const AddingContentForm = () => {
       const maxNewsId = newsData?.[0]?.id ?? 0;
       const newId = Math.max(maxArabicId, maxNewsId) + 1;
 
-      // Insert with new ID
+      // ==== UPDATED INSERT WITH IMAGE URL ====
       const [{ error: arabicError }, { error: englishError }] =
         await Promise.all([
-          supabase.from("ArabicNews").insert({ id: newId, title, content }),
-          supabase
-            .from("News")
-            .insert({ id: newId, title: titleEn, content: contentEn }),
+          supabase.from("ArabicNews").insert({
+            id: newId,
+            title,
+            content,
+            image_url: publicUrl, // Added image URL
+          }),
+          supabase.from("News").insert({
+            id: newId,
+            title: titleEn,
+            content: contentEn,
+            image_url: publicUrl, // Added image URL
+          }),
         ]);
 
       if (arabicError) throw arabicError;
       if (englishError) throw englishError;
 
+      // ==== EXISTING SUCCESS HANDLING ====
       toast({
-        title: "Post added successfully",
-        description: `Published at ${new Date().toLocaleString()}`,
-        status: "success",
+        title: "تمت اضافة الخبر بنجاح", // "Post added successfully"
+        description: `تم النشر في ${new Date().toLocaleString()}`,
       });
 
+      // Reset form including image
       setTitle("");
       setContent("");
       setTitleEn("");
       setContentEn("");
+      setImageFile(null); // Clear image input
     } catch (error) {
       console.error(error);
+      // Enhanced error messages
+      const errorMessage = error.message.includes("storage")
+        ? "فشل رفع الصورة، تأكد من صيغة الملف (JPG/PNG)" // "Image upload failed, check file format"
+        : error.message || "فشل اضافة الخبر"; // "Failed to add post"
+
       toast({
-        title: "Error",
-        description: error.message || "Failed to add post",
-        status: "error",
+        title: "خطأ",
+        description: errorMessage,
+        variant: "destructive",
       });
     }
   };
@@ -154,7 +189,7 @@ const AddingContentForm = () => {
                 value={contentEn}
               ></textarea>
             </div>
-            <form className="w-full">
+            <div className="w-full">
               <label
                 className="block mb-2 text-sm font-medium text-gray-900 flex flex-col items-end"
                 htmlFor="user_avatar"
@@ -166,8 +201,10 @@ const AddingContentForm = () => {
                 aria-describedby="user_avatar_help"
                 id="user_avatar"
                 type="file"
+                onChange={(e) => setImageFile(e.target.files[0])} // Add this
+                accept="image/*" // Add accept restriction
               />
-            </form>
+            </div>
 
             <button
               type="submit"

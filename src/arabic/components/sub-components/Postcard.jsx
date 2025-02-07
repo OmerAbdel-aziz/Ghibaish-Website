@@ -1,12 +1,25 @@
 import React from "react";
 import banner2 from "../../../../public/assets/images/banner2.jpg";
-const Postcard = ({ id, title, content, image, lang }) => {
+const Postcard = ({ id, title, content, imageUrl }) => {
   return (
     <div
       className="flex flex-col h-full bg-white border border-gray-200 rounded-lg shadow-md"
       lang="ar"
     >
-      <img className="rounded-t-lg" src={banner2} alt={title} />
+      <img
+        className="rounded-t-lg w-full h-48 object-cover"
+        src={
+          // imageUrl
+          //   ? `${imageUrl}?cache=${Date.now()}`
+          //   :
+          "../../../../public/assets/images/banner2.jpg"
+        }
+        alt={title}
+        // onError={(e) => {
+        //   e.target.src = "../../../../public/assets/images/banner2.jpg";
+        //   console.error("Failed to load image:", imageUrl);
+        // }}
+      />
       <div className="p-5 flex-1 flex flex-col">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-end">
           {title}

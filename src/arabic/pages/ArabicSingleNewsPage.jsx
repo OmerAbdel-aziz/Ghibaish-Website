@@ -36,16 +36,15 @@ const ArabicSingleNewsPage = () => {
   return (
     <>
       <div
-        className="hero absolute top-0 min-h-[70vh] w-full"
+        className="hero absolute top-0 min-h-[50vh] w-full"
         style={{
-          backgroundImage:
-            "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
+          backgroundImage: `url(${newsData?.image_url})`,
         }}
         lang="ar"
       >
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-neutral-content text-center">
-          <div className="max-w-md md:max-w-2xl md:justify-END md:text-right md:items-end md:left-[42%] md:relative px-10 md:px-0">
+          <div className="max-w-md md:max-w-2xl md:justify-END md:text-right md:items-end md:left-[50vh] md:relative px-10 md:px-0">
             <div className="py-8">
               <a
                 href="/"
@@ -69,23 +68,16 @@ const ArabicSingleNewsPage = () => {
                 </svg>
               </a>
             </div>
-            <h1 className="mb-5 text-4xl font-bold">
-              العنوان الرئيسي لمحتوى هذه الصفحة
-            </h1>
-            <p className="mb-5">
-              يولد جميع الناس أحرارًا متساوين في الكرامة والحقوق. وقد وهبوا
-              عقلاً وضميرًا وعليهم أن يعامل بعضهم بعضًا بروح الإخاء.
-            </p>
+            <h1 className="mb-5 text-4xl font-bold">{newsData.title}</h1>
           </div>
         </div>
       </div>
-      <div className="py-10 px-10 md:px-20 relative top-[470px]">
+      <div className="py-10 px-10 md:px-20 relative top-[320px] bg-white pb-20">
         {newsData && (
           <div
             className="flex flex-col items-center justify-center gap-10 "
             lang="ar"
           >
-            <p className="text-5xl text-center ">{newsData.title} </p>
             <p className="text-2xl text-center">{newsData.content}</p>
           </div>
         )}

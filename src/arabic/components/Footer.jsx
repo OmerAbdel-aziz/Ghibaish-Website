@@ -1,10 +1,16 @@
 import React from "react";
 import logo from "../../../public/assets/images/GCST.png";
+import { useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
   return (
     <footer
-      className="footer bg-[#1E1E1E] text-white p-10 relative top-[555px] text-end"
+      className={`footer bg-[#1E1E1E] text-white p-10 relative ${
+        isHomePage ? "top-[555px]" : "top-[35vh]"
+      } text-end`}
       lang="ar"
     >
       <nav className="place-self-end">

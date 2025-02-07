@@ -1,6 +1,7 @@
 import React from "react";
 import StaffCard from "../components/sub-components/StaffCard";
 import { motion } from "framer-motion";
+import Header from "../components/sub-components/Header";
 
 const staff = [
   { name: "بروفيسور عبد الباسط ادم مريود", role: "رئيس المجلس و المؤسس" },
@@ -19,46 +20,7 @@ const staff = [
 const ArabicStaffPage = () => {
   return (
     <>
-      <div
-        className="hero absolute top-0 min-h-[50vh] w-full"
-        style={{
-          backgroundImage: "url(../../assets/images/banner11.jpg)",
-        }}
-        lang="ar"
-      >
-        <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-neutral-content text-end">
-          <div className="max-w-md md:max-w-2xl md:justify-end md:text-right md:items-end md:left-[250%] md:relative px-10 md:px-0">
-            <div className="py-8">
-              <a
-                href="/"
-                class="hidden md:inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#1E1E1E] rounded-lg hover:bg-[#637C65] focus:ring-4 focus:outline-none focus:ring-blue-300 "
-              >
-                <span className="ml-2 font-cairo">
-                  {" "}
-                  عودة الى الصفحة الرئيسية
-                </span>
-                <svg
-                  class=" w-3.5 h-3.5 ms-2"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                  />
-                </svg>
-              </a>
-            </div>
-            <h1 className="mb-5 text-4xl font-bold font-cairo">ادارة الكلية</h1>
-          </div>
-        </div>
-      </div>
+      <Header title={"الهيئة الإدارية"} />
       <section
         class="bg-white dark:bg-gray-900 relative top-[250px] justify-end items-end flex flex-col w-full px-10  "
         lang="ar"
@@ -110,7 +72,7 @@ const ArabicStaffPage = () => {
           </div>
         </div>
       </section>
-      <div class="  bg-white mx-auto max-w-[95%] relative top-[120px]">
+      <div class=" mx-auto max-w-[70%] md:max-w-[90%] relative top-[220px] pb-20">
         <div
           class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-16 gap-y-8 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
           lang="ar"

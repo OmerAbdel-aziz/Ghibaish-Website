@@ -1,3 +1,4 @@
+import DropdownMenu from "@/arabic/components/sub-components/DropDownMenu";
 import Logo from "../../../public/assets/images/GCST.png";
 import { Languages } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -201,106 +202,19 @@ const Navbar = () => {
               About
             </a>
           </li>
+          <DropdownMenu
+            title="Students"
+            item1="Admission"
+            item2="Academic Guidance"
+            item3="Departments"
+          />
+          <DropdownMenu
+            title="Centers"
+            item1="Knowledge Repository Center"
+            item2="Um Gusai Center"
+            item3="Research and Projects"
+          />
 
-          <li>
-            <details>
-              <summary className="text-[14px] md:text-lg font-roboto">
-                Students
-              </summary>
-              <ul className="p-2 z-10 text-black">
-                <li>
-                  <a
-                    href="#students"
-                    className="text-[14px] md:text-lg font-roboto"
-                  >
-                    Admission
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#guidance"
-                    className="text-[14px] md:text-lg font-roboto"
-                  >
-                    Academic Guidance
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#departments"
-                    className="text-[14px] md:text-lg font-roboto"
-                  >
-                    Departments
-                  </a>
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary className="text-[14px] md:text-lg font-roboto">
-                Course Info
-              </summary>
-              <ul className="p-2 z-10 text-black">
-                <li>
-                  <a
-                    href="#course-link1"
-                    className="text-[14px] md:text-lg font-roboto"
-                  >
-                    Link 1
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#course-link2"
-                    className="text-[14px] md:text-lg font-roboto"
-                  >
-                    Link 2
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#course-link3"
-                    className="text-[14px] md:text-lg font-roboto"
-                  >
-                    Link 3
-                  </a>
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary className="text-[14px] md:text-lg font-roboto">
-                Centers
-              </summary>
-              <ul className="p-2 z-10 text-black">
-                <li>
-                  <a
-                    href="#centers"
-                    className="text-[14px] md:text-lg font-roboto"
-                  >
-                    Um Qusai Center
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#centers"
-                    className="text-[14px] md:text-lg font-roboto"
-                  >
-                    Indegnous Knowldege Center
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#centers"
-                    className="text-[14px] md:text-lg font-roboto"
-                  >
-                    Research
-                  </a>
-                </li>
-              </ul>
-            </details>
-          </li>
           <li>
             <a href="#news" className="text-[14px] md:text-lg font-roboto">
               News

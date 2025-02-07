@@ -80,7 +80,7 @@ const News = ({ isHome = false }) => {
                         ? post.content.substring(0, 150) + "..."
                         : post.content
                     }
-                    image={post.image}
+                    imageUrl={post.image_url}
                   />
                 ))
               ) : (

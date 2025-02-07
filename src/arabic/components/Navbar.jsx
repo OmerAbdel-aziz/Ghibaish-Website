@@ -1,6 +1,7 @@
 import Logo from "../../../public/assets/images/GCST.png";
 import { Languages } from "lucide-react";
 import { useEffect, useState } from "react";
+import DropDownMenu from "./sub-components/DropDownMenu";
 
 const Navbar = () => {
   const [bgOpacity, setBgOpacity] = useState(0);
@@ -194,98 +195,72 @@ const Navbar = () => {
               الاخبار
             </a>
           </li>
-          <li>
+          <DropDownMenu
+            title="المراكز"
+            item1="ام قصي للمرأة والطفل"
+            item2="مركز المخزون المعرفي"
+            item3="الأبحاث والمشاريع البحثية"
+          />
+          {/* <li>
             <details>
               <summary className="text-[14px] md:text-lg font-roboto text-end">
-                المراكز
+                توصيف المقررات
               </summary>
-              <ul className="p-2 z-10 text-black">
-                <li className="w-full flex flex-wrap w-[150px]">
+              <ul className="p-2 z-10 text-black min-w-[200px]">
+                
+                <li className="w-full flex justify-end">
                   <a
                     href="#centers"
-                    className="text-[10px] md:text-xs font-roboto text-end  "
+                    className="text-[10px] md:text-xs font-roboto text-end w-full hover:bg-gray-100"
                   >
                     مركز ام قصي للمرأة والطفل
                   </a>
                 </li>
-                <li>
+                <li className="w-full flex justify-end">
                   <a
                     href="#centers"
-                    className="text-[14px] md:text-xs font-roboto text-end"
+                    className="text-[14px] md:text-xs font-roboto text-end w-full hover:bg-gray-100"
                   >
                     مركز المخزون المعرفي
                   </a>
                 </li>
-                <li>
+                <li className="w-full flex justify-end">
                   <a
                     href="#centers"
-                    className="text-[14px] md:text-xs font-cairo text-end"
+                    className="text-[14px] md:text-xs font-cairo text-end w-full hover:bg-gray-100"
                   >
                     الأبحاث والمشاريع البحثية
                   </a>
                 </li>
               </ul>
             </details>
-          </li>
-          <li>
-            <details>
-              <summary className="text-[14px] md:text-lg font-roboto text-end">
-                توصيف المقررات
-              </summary>
-              <ul className="p-2 z-10 text-black">
-                <li>
-                  <a
-                    href="#course-link1"
-                    className="text-[14px] md:text-lg font-roboto text-end"
-                  >
-                    Link 1
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#course-link2"
-                    className="text-[14px] md:text-lg font-roboto text-end"
-                  >
-                    Link 2
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#course-link3"
-                    className="text-[14px] md:text-lg font-roboto text-end"
-                  >
-                    Link 3
-                  </a>
-                </li>
-              </ul>
-            </details>
-          </li>
+          </li> */}
           <li>
             <details>
               <summary className="text-[14px] md:text-lg font-roboto text-end">
                 شئون الطلاب
               </summary>
-              <ul className="p-2 z-10 text-black">
-                <li>
+              <ul className="p-2 z-10 text-black min-w-[200px]">
+                <li className="w-full flex justify-end">
                   <a
-                    href="#students"
-                    className="text-[14px] md:text-lg font-roboto text-end"
+                    href="#centers"
+                    className="text-[10px] md:text-xs font-roboto text-end w-full hover:bg-gray-100"
                   >
                     القبول والتسجيل
                   </a>
                 </li>
-                <li>
+                <li className="w-full flex justify-end">
                   <a
-                    href="#guidance"
-                    className="text-[14px] md:text-lg font-roboto text-end"
+                    href="#centers"
+                    className="text-[14px] md:text-xs font-roboto text-end w-full hover:bg-gray-100"
                   >
-                    لارشاد الاكاديمي
+                    الارشاد الاكاديمي
                   </a>
                 </li>
-                <li>
+                <li className="w-full flex justify-end">
                   <a
-                    href="#departments"
-                    className="text-[14px] md:text-lg font-roboto text-end"
+                    href="#centers"
+                    className="text-[14px] md:text-xs font-cairo text-end w-full hover:bg-gray-100"
                   >
                     اقسام الكلية
                   </a>
@@ -293,7 +268,6 @@ const Navbar = () => {
               </ul>
             </details>
           </li>
-
           <li>
             <a
               href="#about"

@@ -68,7 +68,7 @@ const Staff = () => {
               </p>
               <a
                 href="/english/staff"
-                class=" items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#1E1E1E] rounded-lg hover:bg-[#637C65] focus:ring-4 focus:outline-none focus:ring-blue-300 hidden md:inline-flex"
+                class=" items-center px-3 py-2 mt-4  text-sm font-medium text-center text-white bg-[#1E1E1E] rounded-lg hover:bg-[#637C65] focus:ring-4 focus:outline-none focus:ring-blue-300  inline-flex"
               >
                 See All Staff
                 <svg

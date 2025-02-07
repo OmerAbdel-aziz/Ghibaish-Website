@@ -1,3 +1,4 @@
+import EnglishHeader from "../components/sub-components/EnglishHeader";
 import StaffCard from "../components/sub-components/StaffCard";
 import { motion } from "framer-motion";
 const staff = [
@@ -44,42 +45,7 @@ const staff = [
 const StaffPage = () => {
   return (
     <>
-      <div
-        className="hero absolute top-0 min-h-[50vh] w-full "
-        style={{
-          backgroundImage: "url(../../assets/images/banner11.jpg)",
-        }}
-      >
-        <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-neutral-content text-center">
-          <div className="max-w-md md:max-w-2xl md:justify-start md:text-left md:items-start md:right-[82%] md:relative px-10 md:px-0">
-            <div className="py-8">
-              <a
-                href="/english"
-                class="hidden md:inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#1E1E1E] rounded-lg hover:bg-[#637C65] focus:ring-4 focus:outline-none focus:ring-blue-300 "
-              >
-                <svg
-                  class="rotate-180 w-3.5 h-3.5 ms-2"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                  />
-                </svg>
-                <span className="ml-2"> Back to Home Page </span>
-              </a>
-            </div>
-            <h1 className="mb-5 text-5xl font-bold ">College Management</h1>
-          </div>
-        </div>
-      </div>
+      <EnglishHeader title="College Management" />
       <section class="bg-white dark:bg-gray-900 relative top-[300px]">
         <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 ">
           <div class=" text-gray-500 sm:text-lg dark:text-gray-400">
@@ -137,7 +103,7 @@ const StaffPage = () => {
           </div>
         </div>
       </section>
-      <div class=" bg-white mx-auto max-w-[80%] relative top-[120px]">
+      <div class=" pb-20 mx-auto max-w-[70%] md:max-w-[90%] relative top-[220px]">
         <div
           class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-16 gap-y-8 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
           lang="ar"

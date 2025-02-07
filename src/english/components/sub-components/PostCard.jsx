@@ -1,11 +1,23 @@
 import React from "react";
 import banner2 from "../../../../public/assets/images/banner2.jpg";
 
-const Postcard = ({ id, title, content, date }) => {
+const Postcard = ({ id, title, content, imageUrl }) => {
   return (
-    <div class="flex flex-col h-full bg-white border border-gray-200 rounded-lg shadow-md">
+    <div class="flex flex-col h-full bg-white border border-gray-200 rounded-lg shadow-md ">
       <a href="#">
-        <img class="rounded-t-lg" src={banner2} alt="" />
+        <img
+          className="rounded-t-lg w-full h-48 object-cover"
+          src={
+            // imageUrl
+            //   ? `${imageUrl}?cache=${Date.now()}`
+            "../../../../public/assets/images/banner2.jpg"
+          }
+          alt={title}
+          // onError={(e) => {
+          //   e.target.src = "../../../../public/assets/images/banner2.jpg";
+          //   console.error("Failed to load image:", imageUrl);
+          // }}
+        />
       </a>
       <div class=" p-5 flex-1 flex flex-col">
         <a href="#">
@@ -13,9 +25,11 @@ const Postcard = ({ id, title, content, date }) => {
             {title}
           </h5>
         </a>
-        <p class="mb-3 font-normal text-gray-700   flex-1 text-start">
-          {content}
-        </p>
+        <div class="flex items-center justify-between mt-2 overflow-hidden">
+          <p class="mb-3 font-normal text-gray-700   flex-1 text-start">
+            {content}
+          </p>
+        </div>
         <div className="mt-4">
           {" "}
           {/* Container for the button */}

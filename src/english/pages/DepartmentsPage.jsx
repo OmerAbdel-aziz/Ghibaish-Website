@@ -13,7 +13,7 @@ const DepartmentsPage = () => {
       >
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-neutral-content text-center">
-          <div className="max-w-screen-2xl md:justify-start md:text-left md:items-start md:right-[15%] md:relative px-10 md:px-0">
+          <div className="max-w-screen-2xl md:justify-start md:text-left md:items-start md:right-[8vw] md:relative px-10 md:px-0">
             <div className="py-8">
               <a
                 href="/english"
@@ -77,8 +77,8 @@ const DepartmentsPage = () => {
           </div>
         </div>
       </div>
-      <section class="bg-white  relative top-[55vh] min-h-screen">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+      <section class="bg-white  relative top-[35vh] min-h-screen">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-2">
           <div class="max-w-screen-lg text-gray-500 sm:text-lg  ">
             <div>
               <section>
