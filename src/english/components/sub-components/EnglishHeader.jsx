@@ -5,7 +5,7 @@ const EnglishHeader = ({ title }) => {
     <div
       className="hero absolute top-0 min-h-[50vh] w-full "
       style={{
-        backgroundImage: "url(../../assets/images/banner11.jpg)",
+        backgroundImage: "url(../../assets/images/header2.jpg)",
       }}
     >
       <div className="hero-overlay bg-opacity-60"></div>

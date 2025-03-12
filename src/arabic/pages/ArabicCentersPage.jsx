@@ -2,6 +2,41 @@ import React from "react";
 import Center2 from "../../../public/assets/images/Center2.png";
 import Center1 from "../../../public/assets/images/CenterAR.png";
 import Header from "../components/sub-components/Header";
+import BookCard from "../components/sub-components/BookCard";
+import gum from "../../../public/assets/images/gum.jpg";
+import blackCumin from "../../../public/assets/images/blackCumin.jpg";
+import Sclerocarya from "../../../public/assets/images/Sclerocarya.webp";
+import candy from "../../../public/assets/images/candy.jpg";
+import food from "../../../public/assets/images/food.jpg";
+import computer from "../../../public/assets/images/computer.jpg";
+
+const Books = [
+  {
+    title: "الصمغ العربي",
+    image: gum,
+    link: "https://www.google.com",
+  },
+  {
+    title: "الحبة السوداء",
+    image: blackCumin,
+    link: "https://www.google.com",
+  },
+  {
+    title: " البقلة السودانية",
+    image: Sclerocarya,
+    link: "https://www.google.com",
+  },
+  {
+    title: "تكنولوجيا تصنيع القند",
+    image: candy,
+    link: "https://www.google.com",
+  },
+  {
+    title: " مبادئ تحليل الأغذية",
+    image: food,
+    link: "https://www.google.com",
+  },
+];
 
 const ArabicCentersPage = () => {
   return (
@@ -11,6 +46,39 @@ const ArabicCentersPage = () => {
         class="bg-white dark:bg-gray-900 relative top-[250px] justify-end items-end flex flex-col w-full px-10 "
         lang="ar"
       >
+        <div class="py-8 px-4 max-w-screen-xl lg:py-16 lg:px-6 text-end ">
+          <div class="w-full text-gray-500 sm:text-lg dark:text-gray-400">
+            <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900">
+              الأبحاث والمشاريع البحثية
+            </h2>
+            <h4>
+              <span className="font-bold text-black">
+                نفذت كلية غبيش للعلوم والتكنولوجيا مجموعة أبحاث يمكن تقسيمها
+                كالتالي
+              </span>
+            </h4>
+            <ul className="gap-2">
+              <li>مشاريع تخرج الطلاب من مختلف التخصصات</li>
+              <li>مشاريع بحثية نفذها أعضاء هيئة التدريس والأعضاء المشاركين</li>
+              <li>مشاريع بحثية نفذها رئيس مجلس الأمناء باسم الكلية</li>
+              <li>أوراق علمية نشرت باسم كلية غبيش</li>
+              <li>أبواب في كتب تحمل اسم كلية غبيش</li>
+              <li>كتب منشورة تحمل اسم كلية غبيش كاسم مرجعي للمشاركين</li>
+            </ul>
+          </div>
+          <div className="flex justify-center items-center w-full">
+            <div class="mx-auto grid w-full bg-center grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-16 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+              {Books.map((book, index) => (
+                <BookCard
+                  key={index}
+                  title={book.title}
+                  image={book.image}
+                  link={book.link}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
         <div class="py-8 px-4 max-w-screen-xl lg:py-16 lg:px-6 text-end ">
           <div class="w-full text-gray-500 sm:text-lg dark:text-gray-400">
             <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900">
@@ -240,21 +308,53 @@ const ArabicCentersPage = () => {
         <div class="py-8 px-4 max-w-screen-xl lg:py-16 lg:px-6 text-end ">
           <div class="w-full text-gray-500 sm:text-lg dark:text-gray-400">
             <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900">
-              الأبحاث والمشاريع البحثية
+              معمل الحاسوب
             </h2>
-            <h4>
+            <div className="flex justify-center py-10">
+              <img src={computer} alt="Center2" width={180} />
+            </div>
+            <h4 className="text-black">
               <span className="font-bold text-black">
-                نفذت كلية غبيش للعلوم والتكنولوجيا مجموعة أبحاث يمكن تقسيمها
-                كالتالي
+                أهداف معمل الحاسوب بالكلية
               </span>
             </h4>
             <ul className="gap-2">
-              <li>مشاريع تخرج الطلاب من مختلف التخصصات</li>
-              <li>مشاريع بحثية نفذها أعضاء هيئة التدريس والأعضاء المشاركين</li>
-              <li>مشاريع بحثية نفذها رئيس مجلس الأمناء باسم الكلية</li>
-              <li>أوراق علمية نشرت باسم كلية غبيش</li>
-              <li>أبواب في كتب تحمل اسم كلية غبيش</li>
-              <li>كتب منشورة تحمل اسم كلية غبيش كاسم مرجعي للمشاركين</li>
+              <li>
+                تقديم الخدمات للطلاب وأعضاء هيئة التدريس ومعاونيهم والباحثين في
+                مجال استخدام الحاسب الآلي لانجاز مهام البحث والتعلم والتدريس
+                والتدريب.{" "}
+              </li>
+              <li>
+                توفير فرصة الاطلاع للطلاب على شبكة المعلومات والاستفادة من كل
+                جديد في تخصصاتهم المختلفة.
+              </li>
+              <li>
+                توفير خدمات الكتابة والطباعة والتصميم للأبحاث لكل الفئات
+                المستهدفة من خدمات المعمل.
+              </li>
+
+              <li>
+                توفير فرصة التعليم الذاتي للطلاب واستخدام تكنولوجيا الحاسب الآلي
+                في العملية التعليمية.
+              </li>
+            </ul>
+            <h4 className="text-black">
+              <span className="font-bold text-black">
+                مكونات معمل الحاسوب بالكلية
+              </span>
+            </h4>
+            <p>
+              معمل الحاسب الآلي والتعليم الالكتروني مزود بأحدث الأجهزة للتطبيق
+              بما يتواكب مع أحدث البرامج في مجال تكنولوجيا المعلومات، حيث يتوفر
+              جهاز حاسب آلي لكل متدرب
+            </p>
+            <ul>
+              <li>
+                خمسة و عشرون جهاز حاسب آلي متصلة بشبكة الانترنت ومزودة ببرامج
+                متخصصة
+              </li>
+              <li>طابعة</li>
+              <li>بروجكتر</li>
             </ul>
           </div>
         </div>

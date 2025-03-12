@@ -1,6 +1,40 @@
 import Center2 from "../../../public/assets/images/Center2.png";
 import CenterEn from "../../../public/assets/images/CenterEn.png";
 import EnglishHeader from "../components/sub-components/EnglishHeader";
+import EnglishBookCard from "../components/sub-components/EnglishBookCard";
+import gum from "../../../public/assets/images/gum.jpg";
+import blackCumin from "../../../public/assets/images/blackCumin.jpg";
+import Sclerocarya from "../../../public/assets/images/Sclerocarya.webp";
+import candy from "../../../public/assets/images/candy.jpg";
+import food from "../../../public/assets/images/food.jpg";
+import computer from "../../../public/assets/images/computer.jpg";
+const Books = [
+  {
+    title: "Gum Arabic",
+    image: gum,
+    link: "https://www.google.com",
+  },
+  {
+    title: "Black Cumin",
+    image: blackCumin,
+    link: "https://www.google.com",
+  },
+  {
+    title: "  Sclerocarya Birrea",
+    image: Sclerocarya,
+    link: "https://www.google.com",
+  },
+  {
+    title: "    Candy Processing Technology",
+    image: candy,
+    link: "https://www.google.com",
+  },
+  {
+    title: "    Food Processing Technology",
+    image: food,
+    link: "https://www.google.com",
+  },
+];
 
 const CentersPage = () => {
   return (
@@ -10,6 +44,48 @@ const CentersPage = () => {
         className="bg-white relative top-[250px] justify-start items-start flex flex-col w-full px-10 text-left"
         lang="en"
       >
+        <div className="py-8 px-4 max-w-screen-xl lg:py-16 lg:px-6 text-left">
+          <div className="w-full text-gray-500 sm:text-lg dark:text-gray-400">
+            <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-900 text-left">
+              Research and Projects
+            </h2>
+            <h4>
+              <span className="font-bold text-black">
+                Ghibaish College of Science and Technology has conducted several
+                research projects, categorized as follows:
+              </span>
+            </h4>
+            <ul className="gap-2">
+              <li>Student graduation projects across various disciplines.</li>
+              <li>
+                Research conducted by faculty members and affiliated staff.
+              </li>
+              <li>
+                Research conducted by the Chairman of the Board of Trustees on
+                behalf of the college.
+              </li>
+              <li>Academic papers published under Ghibaish College's name.</li>
+              <li>Chapters in books credited to Ghibaish College.</li>
+              <li>
+                Books published with Ghibaish College as a reference for
+                contributors.
+              </li>
+            </ul>
+          </div>
+          <div
+            class="mx-auto mt-10 grid w-full grid-cols-2 md:grid-cols-3 gap-x-16 gap-y-8 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-5"
+            lang="ar"
+          >
+            {Books.map((book, index) => (
+              <EnglishBookCard
+                key={index}
+                title={book.title}
+                image={book.image}
+                link={book.link}
+              />
+            ))}
+          </div>
+        </div>
         <div className="py-8 px-4 max-w-screen-xl lg:py-16 lg:px-6 text-left">
           <div className="w-full text-gray-500 sm:text-lg dark:text-gray-400">
             <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-900 text-left">
@@ -260,29 +336,52 @@ const CentersPage = () => {
         <div className="py-8 px-4 max-w-screen-xl lg:py-16 lg:px-6 text-left">
           <div className="w-full text-gray-500 sm:text-lg dark:text-gray-400">
             <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-900 text-left">
-              Research and Projects
+              Computer Lab
             </h2>
-            <h4>
+            <div className="flex justify-center py-10">
+              <img src={computer} alt="Center2" width={180} />
+            </div>
+            <h4 className="text-black text-left">
               <span className="font-bold text-black">
-                Ghibaish College of Science and Technology has conducted several
-                research projects, categorized as follows:
+                Objectives of the Computer Lab at the College:
               </span>
             </h4>
             <ul className="gap-2">
-              <li>Student graduation projects across various disciplines.</li>
               <li>
-                Research conducted by faculty members and affiliated staff.
+                Providing services to students, faculty members, their
+                assistants, and researchers in utilizing computers for research,
+                learning, teaching, and training purposes.Providing students
+                with the necessary skills to use computers and the internet.
               </li>
               <li>
-                Research conducted by the Chairman of the Board of Trustees on
-                behalf of the college.
+                Offering students access to the internet to stay updated with
+                the latest developments in their respective fields.
               </li>
-              <li>Academic papers published under Ghibaish College's name.</li>
-              <li>Chapters in books credited to Ghibaish College.</li>
               <li>
-                Books published with Ghibaish College as a reference for
-                contributors.
+                Providing writing, printing, and design services for research
+                work to all target groups benefiting from the lab's services.
               </li>
+              <li>
+                Enabling self-learning for students and integrating computer
+                technology into the educational process.
+              </li>
+            </ul>
+            <h4>
+              <span className="font-bold text-black">
+                Components of the Computer Lab at the College:
+              </span>
+            </h4>
+            <p>
+              The computer and e-learning lab is equipped with the latest
+              devices to keep up with the most advanced software in the field of
+              information technology. Each trainee is provided with a dedicated
+              computer, and the lab is equipped with the latest training tools
+              in the field of IT, including:
+            </p>
+            <ul>
+              <li>25 computers</li>
+              <li>1 printer</li>
+              <li>Projecter</li>
             </ul>
           </div>
         </div>

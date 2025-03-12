@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { Button, Typography } from "@material-tailwind/react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import emailjs from "emailjs-com";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Form } from "@/components/ui/form";
@@ -13,27 +13,7 @@ const containerStyle = {
   width: "100%",
   height: "100%",
 };
-function onSubmit(values) {
-  e.preventDefault();
 
-  emailjs
-    .sendForm(
-      "YOUR_SERVICE_ID",
-      "YOUR_TEMPLATE_ID",
-      form.current,
-      "YOUR_USER_ID"
-    )
-    .then(
-      (result) => {
-        console.log(result.text);
-        alert("Message sent successfully!");
-      },
-      (error) => {
-        console.log(error.text);
-        alert("Failed to send message, please try again.");
-      }
-    );
-}
 const location = [10.5611937, 27.3402381];
 
 const schema = z.object({
@@ -47,31 +27,12 @@ const Contact = () => {
   const form = useForm({
     resolver: zodResolver(schema),
     defaultValues: {
-      username: "",
+      firstName: "",
+      lastName: "",
       email: "",
+      message: "",
     },
   });
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        form.current,
-        "YOUR_USER_ID"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          alert("Message sent successfully!");
-        },
-        (error) => {
-          console.log(error.text);
-          alert("Failed to send message, please try again.");
-        }
-      );
-  };
 
   return (
     <div
@@ -108,7 +69,8 @@ const Contact = () => {
             </div>
             <Form {...form}>
               <form
-                onSubmit={form.handleSubmit(onSubmit)}
+                action="https://formspree.io/f/xvgkodov"
+                method="POST"
                 className="space-y-8"
               >
                 <div className="grid grid-cols-2 gap-4">
@@ -163,7 +125,10 @@ const Contact = () => {
                   >
                     Massage
                   </Typography>
-                  <Textarea className="focus:border-[#637C65] rounded-lg hover:border-[#637C65] text-end" />
+                  <Textarea
+                    name="message"
+                    className="focus:border-[#637C65] rounded-lg hover:border-[#637C65] text-end"
+                  />
                 </div>
                 <div className="flex w-full">
                   <Button

@@ -1,35 +1,12 @@
-import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { Button, Typography } from "@material-tailwind/react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import emailjs from "emailjs-com";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Form } from "@/components/ui/form";
 import CustomFormFiled from "../../english/components/sub-components/CustomFormFiled";
 import { Textarea } from "../../components/ui/textarea";
-
-function onSubmit(values) {
-  e.preventDefault();
-
-  emailjs
-    .sendForm(
-      "YOUR_SERVICE_ID",
-      "YOUR_TEMPLATE_ID",
-      form.current,
-      "YOUR_USER_ID"
-    )
-    .then(
-      (result) => {
-        console.log(result.text);
-        alert("Message sent successfully!");
-      },
-      (error) => {
-        console.log(error.text);
-        alert("Failed to send message, please try again.");
-      }
-    );
-}
 
 const containerStyle = {
   width: "100%",
@@ -47,31 +24,12 @@ const Contact = () => {
   const form = useForm({
     resolver: zodResolver(schema),
     defaultValues: {
-      username: "",
+      firstName: "",
+      lastName: "",
       email: "",
+      message: "",
     },
   });
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        form.current,
-        "YOUR_USER_ID"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          alert("Message sent successfully!");
-        },
-        (error) => {
-          console.log(error.text);
-          alert("Failed to send message, please try again.");
-        }
-      );
-  };
 
   return (
     <div
@@ -89,88 +47,10 @@ const Contact = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-x-12 gap-y-6 lg:grid-cols-2 items-start">
-            {/* <form
-              action="#"
-              className="flex flex-col gap-4 lg:max-w-lg ml-10 text-end"
-              ref={form}
-              onSubmit={sendEmail}
-            >
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                 
-                  <Input
-                    color="gray"
-                    size="lg"
-                    placeholder="Last Name"
-                    name="last-name"
-                    className="text-end !border-[0.5px]" // Makes border very thin
-                    containerProps={{
-                      className: "!min-w-full !border-[0.5px]",
-                    }}
-                    labelProps={{
-                      className: "hidden",
-                    }}
-                  />
-                </div>
-                <div>
-                 
-                  <Input
-                    color="gray"
-                    size="lg"
-                    placeholder="First Name"
-                    name="first-name"
-                    className="focus:border-t-gray-900"
-                    containerProps={{
-                      className: "min-w-full",
-                    }}
-                    labelProps={{
-                      className: "hidden",
-                    }}
-                  />
-                </div>
-              </div>
-              <div>
-              
-                <Input
-                  color="gray"
-                  size="lg"
-                  placeholder="name@email.com"
-                  name="email"
-                  className="focus:border-[#637C65] text-end border-none"
-                  containerProps={{
-                    className: "!min-w-full",
-                  }}
-                  labelProps={{
-                    className: "hidden",
-                  }}
-                />
-              </div>
-              <div>
-               
-                <Textarea
-                  rows={6}
-                  color="gray"
-                  placeholder="Message"
-                  name="message"
-                  className="focus:border-[#637C65] rounded-lg hover:border-[#637C65] text-end border-none"
-                  containerProps={{
-                    className: "!min-w-full",
-                  }}
-                  labelProps={{
-                    className: "hidden",
-                  }}
-                />
-              </div>
-              <button
-                type="submit"
-                className="block w-full rounded-md bg-[#1E1E1E] hover:bg-[#637C65] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#637C65] "
-              >
-                ارسال
-              </button>
-            </form> */}
             <Form {...form}>
               <form
-                onSubmit={form.handleSubmit(onSubmit)}
+                action="https://formspree.io/f/xvgkodov"
+                method="POST"
                 className="space-y-8"
               >
                 <div className="grid grid-cols-2 gap-4">
@@ -225,7 +105,10 @@ const Contact = () => {
                   >
                     الرسالة
                   </Typography>
-                  <Textarea className="focus:border-[#637C65] rounded-lg hover:border-[#637C65] text-end" />
+                  <Textarea
+                    name="message"
+                    className="focus:border-[#637C65] rounded-lg hover:border-[#637C65] text-end"
+                  />
                 </div>
                 <div className="flex w-full">
                   <Button

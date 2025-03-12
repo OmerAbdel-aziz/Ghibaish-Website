@@ -1,44 +1,66 @@
 import StaffCard from "./sub-components/StaffCard";
 import { motion } from "framer-motion";
+import AbdelBasit from "../../../public/assets/images/AbdelBasit.jpg";
+import Altom from "../../../public/assets/images/Altom.jpg";
+import Hussein from "../../../public/assets/images/Hussein.jpg";
+import Fadl from "../../../public/assets/images/Fadl.jpg";
+import Avatar from "../../../public/assets/images/Avatar.webp";
 
 const staff = [
   {
     name: "Professor Abdel Basit Adam Marioud",
     role: "Chairman of the Board and Founder",
+    image: AbdelBasit,
   },
   {
     name: "Professor Ahmed Mohamedain Al-Tom",
     role: "Member of the Board of Trustees",
+    image: Altom,
   },
   {
     name: "Professor Ahmed Ismail Hussein",
     role: "Member of the Board of Trustees",
+    image: Hussein,
   },
-  { name: "Professor Sayed Fadl Ali Al-Mola", role: "Dean of the College" },
+  {
+    name: "Professor Sayed Fadl Ali Al-Mola",
+    role: "Dean of the College",
+    image: Fadl,
+  },
   {
     name: "Dr. Al-Sadiq Mohamed Adam Ali",
     role: "Member of the Board of Trustees",
+    image: Avatar,
   },
   {
     name: "Dr. Adam Al-Haj Ahmed Yass",
     role: "Member of the Board of Trustees",
+    image: Avatar,
   },
-  { name: "Dr. Salah Al-Masri", role: "Member of the Board of Trustees" },
+  {
+    name: "Dr. Salah Al-Masri",
+    role: "Member of the Board of Trustees",
+    image: Avatar,
+  },
   {
     name: "Prince Abdel Qader Ali Mohamed Obaidallah",
     role: "Member of the Board of Trustees",
+    image: Avatar,
   },
   {
     name: "Ms. Inshirah Mohamed Babiker",
     role: "Member of the Board of Trustees",
+    image: Avatar,
   },
   {
     name: "Mr. Qusay Abdel Basit Adam",
     role: "Member of the Board of Trustees",
+    image: Avatar,
   },
   {
     name: "Sheikh Othman Adam Marioud",
     role: "Member of the Board of Trustees",
+    image: Avatar,
   },
 ];
 
@@ -89,18 +111,14 @@ const Staff = () => {
               </a>
             </div>
             <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-              {staff.slice(0, 3).map((staff, index) => (
+              {staff.slice(0, 3).map((member, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <StaffCard
-                    name={staff.name}
-                    role={staff.role}
-                    img={`/staff/${index + 1}.jpg`}
-                  />
+                  <StaffCard member={member} />
                 </motion.div>
               ))}
             </div>

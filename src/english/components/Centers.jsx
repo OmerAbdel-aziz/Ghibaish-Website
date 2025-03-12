@@ -1,3 +1,6 @@
+import Computer from "../../../public/assets/images/computer.jpg";
+import Children from "../../../public/assets/images/children.jpg";
+
 const Centers = () => {
   return (
     <div
@@ -19,16 +22,14 @@ const Centers = () => {
               environment that combines the latest technologies with outstanding
               academic expertise. This enables researchers to conduct pioneering
               studies in diverse fields such as applied sciences, humanities,
-              engineering, medicine, and more. These centers work to enhance
+              and other interdisciplinary domains. These centers work to enhance
               collaboration between the college and local and international
               research institutions, offering opportunities for students and
               academics to participate in innovative research projects. We also
               strive to align scientific research with community needs,
               providing practical solutions that contribute to sustainable
-              development.
-              <br />
-              Join us to explore a world of research opportunities that inspire
-              creativity and unlock potential.
+              development. Join us to explore a world of research opportunities
+              that inspire creativity and unlock potential.{" "}
             </p>
 
             <a
@@ -57,12 +58,12 @@ const Centers = () => {
           <div className="grid grid-cols-2 gap-4 mt-8">
             <img
               className="w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
+              src={Computer}
               alt="office content 1"
             />
             <img
               className="mt-4 w-full lg:mt-10 rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
+              src={Children}
               alt="office content 2"
             />
           </div>

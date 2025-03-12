@@ -35,7 +35,14 @@ const Footer = () => {
           الارشاد الأكاديمي
         </a>
       </nav>
-
+      <nav className="place-self-end">
+        <h6 className="footer-title text-end place-self-end ">
+          تابعنا على الوسائط
+        </h6>
+        <a className="link link-hover text-end place-self-end">فيسبوك</a>
+        <a className="link link-hover text-end place-self-end"> لنكدن</a>
+        <a className="link link-hover text-end place-self-end">قناة تليغرام</a>
+      </nav>
       <nav className="place-self-end">
         <h6 className="footer-title text-end place-self-end ">الرئيسية</h6>
         <a className="link link-hover text-end place-self-end">عن الكلية</a>

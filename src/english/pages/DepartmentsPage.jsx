@@ -1,4 +1,28 @@
 import React, { useEffect, useState } from "react";
+import StaffCard from "../components/sub-components/StaffCard";
+
+const staffData = {
+  member1: {
+    name: "Dr. Ahmed Ali",
+    role: "Head of Department",
+    image: "../../assets/images/avatar.webp",
+  },
+  member2: {
+    name: "Dr. Mohamed Hassan",
+    role: "Assistant Professor",
+    image: "../../assets/images/avatar.webp",
+  },
+  member3: {
+    name: "Dr. Ahmed Ali",
+    role: "Assistant Professor",
+    image: "../../assets/images/avatar.webp",
+  },
+  member4: {
+    name: "Dr. Ahmed Ali",
+    role: "Assistant Professor",
+    image: "../../assets/images/avatar.webp",
+  },
+};
 
 const DepartmentsPage = () => {
   const [deparmentTitle, setDepartmentTitle] = useState(" ");
@@ -8,7 +32,7 @@ const DepartmentsPage = () => {
       <div
         className="hero absolute top-0 min-h-[50vh] w-full"
         style={{
-          backgroundImage: "url(../../assets/images/banner11.jpg)",
+          backgroundImage: "url(../../assets/images/header2.jpg)",
         }}
       >
         <div className="hero-overlay bg-opacity-60"></div>
@@ -173,6 +197,9 @@ const DepartmentsPage = () => {
                     environmental, social, and economic well-being.
                   </li>
                 </ul>
+                <div>
+                  <StaffCard member={staffData.member1} />
+                </div>
               </section>
 
               <section>
@@ -249,8 +276,11 @@ const DepartmentsPage = () => {
                     advancements.
                   </li>
                 </ul>
+                <div>
+                  <StaffCard member={staffData.member2} />
+                </div>
               </section>
-
+              <section></section>
               <section>
                 <h2
                   className="mb-4 mt-4 text-4xl tracking-tight font-bold text-gray-900"
@@ -296,6 +326,9 @@ const DepartmentsPage = () => {
                     knowledge to help identify and solve its economic problems.
                   </li>
                 </ul>
+                <div>
+                  <StaffCard member={staffData.member3} />
+                </div>
               </section>
 
               <section>
@@ -361,6 +394,9 @@ const DepartmentsPage = () => {
                     their chances in the labor market.
                   </li>
                 </ul>
+                <div>
+                  <StaffCard member={staffData.member4} />
+                </div>
               </section>
             </div>
           </div>

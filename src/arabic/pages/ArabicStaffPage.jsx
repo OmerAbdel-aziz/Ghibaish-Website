@@ -2,19 +2,70 @@ import React from "react";
 import StaffCard from "../components/sub-components/StaffCard";
 import { motion } from "framer-motion";
 import Header from "../components/sub-components/Header";
+import AbdelBasit from "../../../public/assets/images/AbdelBasit.jpg";
+import Altom from "../../../public/assets/images/Altom.jpg";
+import Hussein from "../../../public/assets/images/Hussein.jpg";
+import Fadl from "../../../public/assets/images/Fadl.jpg";
+import Avatar from "../../../public/assets/images/Avatar.webp";
 
 const staff = [
-  { name: "بروفيسور عبد الباسط ادم مريود", role: "رئيس المجلس و المؤسس" },
-  { name: "بروفسور احمد محمدين التوم", role: "عضو مجلس الأمناء" },
-  { name: "بروفسور احمد اسماعيل حسين  ", role: "عضو مجلس الأمناء" },
-  { name: "بروفسور سيد فضل علي المولي", role: "مدير الكلية" },
-  { name: "دكتور الصادق محمد ادم على", role: "عضو مجلس الأمناء" },
-  { name: "دكتور ادم الحاج احمد يس", role: "عضو مجلس الأمناء" },
-  { name: "دكتور صلاح المصري", role: "عضو مجلس الأمناء" },
-  { name: "الامير عبد القادر علي محمد عبيد الله", role: "عضو مجلس الأمناء" },
-  { name: " الاستاذة انشراح محمد بابكر", role: "عضو مجلس الأمناء" },
-  { name: "الاستاذ قصي عبد الباسط ادم    ", role: "عضو مجلس الأمناء" },
-  { name: "الشيخ عثمان ادم مريود ", role: "عضو مجلس الأمناء" },
+  {
+    name: "بروفيسور عبد الباسط ادم مريود",
+    role: "رئيس المجلس و المؤسس",
+    image: AbdelBasit,
+  },
+  {
+    name: "بروفسور احمد محمدين التوم",
+    role: "عضو مجلس الأمناء",
+    image: Altom,
+  },
+  {
+    name: "بروفسور احمد اسماعيل حسين  ",
+    role: "عضو مجلس الأمناء",
+    image: Hussein,
+  },
+
+  {
+    name: "بروفسور سيد فضل علي المولي",
+    role: "مدير الكلية",
+    image: Fadl,
+  },
+
+  {
+    name: "دكتور الصادق محمد ادم على",
+    role: "عضو مجلس الأمناء",
+    image: Avatar,
+  },
+  {
+    name: "دكتور ادم الحاج احمد يس",
+    role: "عضو مجلس الأمناء",
+    image: Avatar,
+  },
+  {
+    name: "دكتور صلاح المصري",
+    role: "عضو مجلس الأمناء",
+    image: Avatar,
+  },
+  {
+    name: "الامير عبد القادر علي محمد عبيد الله",
+    role: "عضو مجلس الأمناء",
+    image: Avatar,
+  },
+  {
+    name: " الاستاذة انشراح محمد بابكر",
+    role: "عضو مجلس الأمناء",
+    image: Avatar,
+  },
+  {
+    name: "الاستاذ قصي عبد الباسط ادم    ",
+    role: "عضو مجلس الأمناء",
+    image: Avatar,
+  },
+  {
+    name: "الشيخ عثمان ادم مريود ",
+    role: "عضو مجلس الأمناء",
+    image: Avatar,
+  },
 ];
 
 const ArabicStaffPage = () => {
@@ -77,18 +128,14 @@ const ArabicStaffPage = () => {
           class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-16 gap-y-8 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
           lang="ar"
         >
-          {staff.reverse().map((staff, index) => (
+          {staff.map((member, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: index * 0.1 }}
             >
-              <StaffCard
-                name={staff.name}
-                role={staff.role}
-                img={`/staff/${index + 1}.jpg`}
-              />
+              <StaffCard member={member} />
             </motion.div>
           ))}
         </div>

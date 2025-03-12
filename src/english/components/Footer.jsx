@@ -32,6 +32,24 @@ const Footer = () => {
           <a className="link link-hover">News</a>
         </nav>
         <nav>
+          <h6 className="footer-title">Social Mediea</h6>
+          <a
+            className="link link-hover"
+            href="https://www.facebook.com/GCSTSD/"
+          >
+            Faceook
+          </a>
+          <a
+            className="link link-hover"
+            href="https://www.linkedin.com/school/ghibaish-college-of-science-and-technology/"
+          >
+            LinkedIn
+          </a>
+          <a className="link link-hover" href="https://t.me/GCST1992">
+            Telegram Channel
+          </a>
+        </nav>
+        <nav>
           <h6 className="footer-title">Student's Affairs</h6>
           <a className="link link-hover">Admission</a>
           <a className="link link-hover">Departments</a>
