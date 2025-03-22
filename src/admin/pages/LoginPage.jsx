@@ -104,15 +104,6 @@ const LoginPage = () => {
                 {loading ? "Signing in..." : "Submit"}
               </button>
               {error && <p className="text-red-500 text-sm">{error}</p>}
-              <p className="text-sm font-light text-gray-500">
-                Don’t have an account yet?{" "}
-                <a
-                  href="/admin/signup"
-                  className="font-medium text-primary-600 hover:underline"
-                >
-                  Sign up
-                </a>
-              </p>
             </form>
           </div>
         </div>

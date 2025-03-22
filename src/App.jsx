@@ -107,7 +107,6 @@ function App() {
               <Routes>
                 {/* Public Admin Routes */}
                 <Route path="/login" element={<LoginPage />} />
-                <Route path="/signup" element={<SignUpPage />} />
 
                 {/* Protected Admin Routes */}
                 <Route
