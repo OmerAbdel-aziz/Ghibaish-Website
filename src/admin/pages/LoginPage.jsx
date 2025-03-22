@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { supabase } from "../../utils/supabase";
+import { supabase } from "../../utils/supabase"; // Adjust path
+import { useAuth } from "../../context/AuthContext"; // Adjust path
 import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
@@ -7,30 +8,23 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const { login } = useAuth(); // Get login function from AuthContext
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setError(null);
-    setLoading(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission (stops GET request)
+
+    setError(null); // Reset error state
+    setLoading(true); // Start loading
 
     try {
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
-
-      if (error) {
-        setError(error.message);
-      } else {
-        console.log("Login successful:", data);
-        // Redirect or show a success message
-        navigate("/admin");
-      }
-    } catch (err) {
-      setError("An unexpected error occurred: " + err.message);
+      await login(email, password); // Use AuthContext login function
+      navigate("/admin"); // Redirect to admin panel on success
+    } catch (error) {
+      console.error("Login failed:", error.message);
+      setError("Login failed. Please check your credentials.");
     } finally {
-      setLoading(false);
+      setLoading(false); // Stop loading
     }
   };
 
@@ -42,7 +36,7 @@ const LoginPage = () => {
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
               Sign in to your account
             </h1>
-            <form className="space-y-4 md:space-y-6" onSubmit={handleLogin}>
+            <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="email"
@@ -104,7 +98,7 @@ const LoginPage = () => {
               </div>
               <button
                 type="submit"
-                className="block w-full rounded-md bg-[#1E1E1E] hover:bg-[#637C65] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#637C65]"
+                className="block w-full rounded-md bg-[#1E1E1E] hover:bg-[#637C65] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#637C65]"
                 disabled={loading}
               >
                 {loading ? "Signing in..." : "Submit"}

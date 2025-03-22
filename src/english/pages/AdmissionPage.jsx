@@ -5,8 +5,8 @@ const AdmissionPage = () => {
   return (
     <>
       <EnglishHeader title="Admission " />
-      <section class="bg-white  relative top-[45vh] min-h-screen">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+      <section class="bg-white  relative top-[40vh] min-h-screen">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-20 lg:px-6">
           <div class="max-w-screen-lg text-gray-500 sm:text-lg  ">
             <div>
               <h2 className="text-4xl text-black font-bold">This Department</h2>
@@ -45,6 +45,51 @@ const AdmissionPage = () => {
                 </li>
                 <li>
                   Preparing for examinations and issuing exam seat numbers.
+                </li>
+                <li>
+                  <p>
+                    Receiving files and lists of names of male and female
+                    students applying to join the college programs.
+                  </p>
+                </li>
+                <li>
+                  <p>Issuing receipts for payment of tuition fees.</p>
+                </li>
+                <li>
+                  <p>
+                    Sorting files and reviewing applicants' data, and verifying
+                    the availability of admission requirements.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Preparing admission test procedures, organizing committees,
+                    and reviewing data and files of accepted students after the
+                    completion of admission processes.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Distributing accepted male and female students to the
+                    specified groups in the academic schedules.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Issuing student ID cards, enrollment certificates, and
+                    status statements.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Handling transfer procedures and enrollment transfers to and
+                    from the college from other higher education institutions.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Preparing and organizing exams and following up on them.
+                  </p>
                 </li>
               </ul>
             </div>

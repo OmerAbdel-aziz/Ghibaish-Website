@@ -1,39 +1,56 @@
+// src/pages/SignUpPage.jsx
 import React, { useState } from "react";
-import { supabase } from "../../utils/supabase"; // Adjust the path to your Supabase client
+import { supabase } from "../../utils/supabase"; // Adjust path
+import { useAuth } from "../../context/AuthContext"; // Adjust path
 import { useNavigate } from "react-router-dom";
+
 const SignUpPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleSignUp = async (e) => {
     e.preventDefault();
 
-    // Reset messages
     setError(null);
     setSuccess(null);
 
-    // Validate passwords
     if (password !== confirmPassword) {
       setError("Passwords do not match");
       return;
     }
 
     try {
-      const { data, error } = await supabase.auth.signUp({
+      const { data, error: authError } = await supabase.auth.signUp({
         email,
         password,
       });
 
-      if (error) {
-        setError(error.message);
+      if (authError) {
+        setError(authError.message);
+        return;
+      }
+
+      const user = data.user;
+
+      // Auto-login after signup (assuming no email confirmation)
+      const { data: sessionData, error: loginError } =
+        await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
+
+      if (loginError) {
+        setError("Auto-login failed: " + loginError.message);
+        setSuccess("User created successfully. Please log in manually.");
+        navigate("/login");
       } else {
-        setSuccess(
-          "User created successfully. Please check your email for confirmation."
-        );
+        login(sessionData.user); // Set user in AuthContext
+        setSuccess("Admin created and logged in successfully!");
         navigate("/admin");
       }
     } catch (err) {
@@ -106,7 +123,7 @@ const SignUpPage = () => {
               </div>
               <button
                 type="submit"
-                className="block w-full rounded-md bg-[#1E1E1E] hover:bg-[#637C65] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#637C65]"
+                className="block w-full rounded-md bg-[#1E1E1E] hover:bg-[#637C65] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#637C65]"
               >
                 Submit
               </button>

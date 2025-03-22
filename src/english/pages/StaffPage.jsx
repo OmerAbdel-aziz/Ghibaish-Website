@@ -1,71 +1,108 @@
 import EnglishHeader from "../components/sub-components/EnglishHeader";
 import StaffCard from "../components/sub-components/StaffCard";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { supabase } from "../../utils/supabase";
 import AbdelBasit from "../../../public/assets/images/AbdelBasit.jpg";
 import Altom from "../../../public/assets/images/Altom.jpg";
 import Hussein from "../../../public/assets/images/Hussein.jpg";
 import Fadl from "../../../public/assets/images/Fadl.jpg";
 import Avatar from "../../../public/assets/images/Avatar.webp";
 
-const staff = [
-  {
-    name: "Professor Abdel Basit Adam Marioud",
-    role: "Chairman of the Board and Founder",
-    image: AbdelBasit,
-  },
-  {
-    name: "Professor Ahmed Mohamedain Al-Tom",
-    role: "Member of the Board of Trustees",
-    image: Altom,
-  },
-  {
-    name: "Professor Ahmed Ismail Hussein",
-    role: "Member of the Board of Trustees",
-    image: Hussein,
-  },
-  {
-    name: "Professor Sayed Fadl Ali Al-Mola",
-    role: "Dean of the College",
-    image: Fadl,
-  },
-  {
-    name: "Dr. Al-Sadiq Mohamed Adam Ali",
-    role: "Member of the Board of Trustees",
-    image: Avatar,
-  },
-  {
-    name: "Dr. Adam Al-Haj Ahmed Yass",
-    role: "Member of the Board of Trustees",
-    image: Avatar,
-  },
-  {
-    name: "Dr. Salah Al-Masri",
-    role: "Member of the Board of Trustees",
-    image: Avatar,
-  },
-  {
-    name: "Prince Abdel Qader Ali Mohamed Obaidallah",
-    role: "Member of the Board of Trustees",
-    image: Avatar,
-  },
-  {
-    name: "Ms. Inshirah Mohamed Babiker",
-    role: "Member of the Board of Trustees",
-    image: Avatar,
-  },
-  {
-    name: "Mr. Qusay Abdel Basit Adam",
-    role: "Member of the Board of Trustees",
-    image: Avatar,
-  },
-  {
-    name: "Sheikh Othman Adam Marioud",
-    role: "Member of the Board of Trustees",
-    image: Avatar,
-  },
-];
+// const staff = [
+//   {
+//     name: "Professor Abdel Basit Adam Marioud",
+//     role: "Chairman of the Board and Founder",
+//     image: AbdelBasit,
+//   },
+//   {
+//     name: "Professor Ahmed Mohamedain Al-Tom",
+//     role: "Member of the Board of Trustees",
+//     image: Altom,
+//   },
+//   {
+//     name: "Professor Ahmed Ismail Hussein",
+//     role: "Member of the Board of Trustees",
+//     image: Hussein,
+//   },
+//   {
+//     name: "Professor Sayed Fadl Ali Al-Mola",
+//     role: "Dean of the College",
+//     image: Fadl,
+//   },
+//   {
+//     name: "Dr. Al-Sadiq Mohamed Adam Ali",
+//     role: "Member of the Board of Trustees",
+//     image: Avatar,
+//   },
+//   {
+//     name: "Dr. Adam Al-Haj Ahmed Yass",
+//     role: "Member of the Board of Trustees",
+//     image: Avatar,
+//   },
+//   {
+//     name: "Dr. Salah Al-Masri",
+//     role: "Member of the Board of Trustees",
+//     image: Avatar,
+//   },
+//   {
+//     name: "Prince Abdel Qader Ali Mohamed Obaidallah",
+//     role: "Member of the Board of Trustees",
+//     image: Avatar,
+//   },
+//   {
+//     name: "Ms. Inshirah Mohamed Babiker",
+//     role: "Member of the Board of Trustees",
+//     image: Avatar,
+//   },
+//   {
+//     name: "Mr. Qusay Abdel Basit Adam",
+//     role: "Member of the Board of Trustees",
+//     image: Avatar,
+//   },
+//   {
+//     name: "Sheikh Othman Adam Marioud",
+//     role: "Member of the Board of Trustees",
+//     image: Avatar,
+//   },
+// ];
 
 const StaffPage = () => {
+  const [staff, setStaff] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchStaff();
+  }, []);
+
+  const fetchStaff = async () => {
+    try {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from("staff")
+        .select("name_en, role_en, image_url")
+        .order("id", { ascending: true });
+
+      if (error) throw error;
+
+      const formattedStaff = data.map((member) => ({
+        name: member.name_en,
+        role: member.role_en,
+        image: member.image_url,
+      }));
+
+      setStaff(formattedStaff);
+    } catch (error) {
+      console.error("Error fetching staff:", error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <EnglishHeader title="College Management" />

@@ -1,5 +1,7 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import StaffCard from "../components/sub-components/StaffCard";
+import { supabase } from "../../utils/supabase";
 import { motion } from "framer-motion";
 import Header from "../components/sub-components/Header";
 import AbdelBasit from "../../../public/assets/images/AbdelBasit.jpg";
@@ -7,68 +9,106 @@ import Altom from "../../../public/assets/images/Altom.jpg";
 import Hussein from "../../../public/assets/images/Hussein.jpg";
 import Fadl from "../../../public/assets/images/Fadl.jpg";
 import Avatar from "../../../public/assets/images/Avatar.webp";
+import Qusai from "../../../public/assets/images/Qusai.jpg";
+import Alhaj from "../../../public/assets/images/Alhaj.jpg";
 
-const staff = [
-  {
-    name: "بروفيسور عبد الباسط ادم مريود",
-    role: "رئيس المجلس و المؤسس",
-    image: AbdelBasit,
-  },
-  {
-    name: "بروفسور احمد محمدين التوم",
-    role: "عضو مجلس الأمناء",
-    image: Altom,
-  },
-  {
-    name: "بروفسور احمد اسماعيل حسين  ",
-    role: "عضو مجلس الأمناء",
-    image: Hussein,
-  },
+// if (loading) {
+//   return <div>جاري التحميل...</div>; // "Loading..." in Arabic
+// }
 
-  {
-    name: "بروفسور سيد فضل علي المولي",
-    role: "مدير الكلية",
-    image: Fadl,
-  },
+// const staff = [
+//   {
+//     name: "بروفيسور عبد الباسط ادم مريود",
+//     role: "رئيس المجلس و المؤسس",
+//     image: AbdelBasit,
+//   },
+//   {
+//     name: "بروفسور احمد محمدين التوم",
+//     role: "عضو مجلس الأمناء",
+//     image: Altom,
+//   },
+//   {
+//     name: "بروفسور احمد اسماعيل حسين  ",
+//     role: "عضو مجلس الأمناء",
+//     image: Hussein,
+//   },
 
-  {
-    name: "دكتور الصادق محمد ادم على",
-    role: "عضو مجلس الأمناء",
-    image: Avatar,
-  },
-  {
-    name: "دكتور ادم الحاج احمد يس",
-    role: "عضو مجلس الأمناء",
-    image: Avatar,
-  },
-  {
-    name: "دكتور صلاح المصري",
-    role: "عضو مجلس الأمناء",
-    image: Avatar,
-  },
-  {
-    name: "الامير عبد القادر علي محمد عبيد الله",
-    role: "عضو مجلس الأمناء",
-    image: Avatar,
-  },
-  {
-    name: " الاستاذة انشراح محمد بابكر",
-    role: "عضو مجلس الأمناء",
-    image: Avatar,
-  },
-  {
-    name: "الاستاذ قصي عبد الباسط ادم    ",
-    role: "عضو مجلس الأمناء",
-    image: Avatar,
-  },
-  {
-    name: "الشيخ عثمان ادم مريود ",
-    role: "عضو مجلس الأمناء",
-    image: Avatar,
-  },
-];
+//   {
+//     name: "بروفسور سيد فضل علي المولي",
+//     role: "مدير الكلية",
+//     image: Fadl,
+//   },
+
+//   {
+//     name: "دكتور الصادق محمد ادم على",
+//     role: "عضو مجلس الأمناء",
+//     image: Avatar,
+//   },
+//   {
+//     name: "دكتور ادم الحاج احمد يس",
+//     role: "عضو مجلس الأمناء",
+//     image: Alhaj,
+//   },
+//   {
+//     name: "دكتور صلاح المصري",
+//     role: "عضو مجلس الأمناء",
+//     image: Avatar,
+//   },
+//   {
+//     name: "الامير عبد القادر علي محمد عبيد الله",
+//     role: "عضو مجلس الأمناء",
+//     image: Avatar,
+//   },
+//   {
+//     name: " الاستاذة انشراح محمد بابكر",
+//     role: "عضو مجلس الأمناء",
+//     image: Avatar,
+//   },
+//   {
+//     name: "الاستاذ قصي عبد الباسط ادم    ",
+//     role: "عضو مجلس الأمناء",
+//     image: Qusai,
+//   },
+//   {
+//     name: "الشيخ عثمان ادم مريود ",
+//     role: "عضو مجلس الأمناء",
+//     image: Avatar,
+//   },
+// ];
 
 const ArabicStaffPage = () => {
+  const [staff, setStaff] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchStaff();
+  }, []);
+
+  const fetchStaff = async () => {
+    try {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from("staff")
+        .select("name_ar, role_ar, image_url")
+        .order("id", { ascending: true });
+
+      if (error) throw error;
+
+      // Map the data to match your component's expected format
+      const formattedStaff = data.map((member) => ({
+        name: member.name_ar,
+        role: member.role_ar,
+        image: member.image_url, // This will be a URL string
+      }));
+
+      setStaff(formattedStaff);
+    } catch (error) {
+      console.error("Error fetching staff:", error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <Header title={"الهيئة الإدارية"} />
@@ -128,14 +168,14 @@ const ArabicStaffPage = () => {
           class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-16 gap-y-8 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
           lang="ar"
         >
-          {staff.map((member, index) => (
+          {staff.map((staff, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: index * 0.1 }}
             >
-              <StaffCard member={member} />
+              <StaffCard member={staff} />
             </motion.div>
           ))}
         </div>

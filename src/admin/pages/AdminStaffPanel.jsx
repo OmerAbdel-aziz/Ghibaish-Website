@@ -1,17 +1,16 @@
-import React, { useState } from "react";
-import AdminContentForm from "./components/AddingContentForm";
-import PostTable from "./components/PostTable";
-const AdminPanel = () => {
-  // Update Content
+import React from "react";
+// import AddStaffForm from "./components/AddStaffForm"; // Assuming this is in your components folder
+import StaffTable from "../components/StaffTable";
 
+const AdminStaffPanel = () => {
   return (
-    <div className="relative top-10  flex w-full flex-col gap-16">
+    <div className="relative top-10 flex w-full flex-col gap-16">
       <div className="flex px-10 items-center justify-between">
         <a
-          href="/admin/add-post"
+          href="/admin/add-staff"
           className="inline-flex flex-row-reverse gap-2 items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#1E1E1E] rounded-lg hover:bg-[#637C65] focus:ring-4 focus:outline-none focus:ring-blue-300 md:inline-flex relative bottom-0"
         >
-          انشاء الخبر
+          إضافة عضو جديد
           <svg
             className="rotate-180 w-3.5 h-3.5 ms-2"
             aria-hidden="true"
@@ -28,11 +27,14 @@ const AdminPanel = () => {
             />
           </svg>
         </a>
-        <h3 className="font-semibold text-2xl">انشاء خبر جديد</h3>
+        <h3 className="font-semibold text-2xl">
+          {" "}
+          إدارة أعضاء الهيئة الإدارية وهيئة التدريس
+        </h3>
       </div>
-      <PostTable table={"ArabicNews"} />
+      <StaffTable />
     </div>
   );
 };
 
-export default AdminPanel;
+export default AdminStaffPanel;

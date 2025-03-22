@@ -4,6 +4,7 @@ import { supabase } from "../../utils/supabase";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { ToastAction } from "@/components/ui/toast";
+
 const AddingContentForm = () => {
   const { id } = useParams();
   const navigate = useNavigate();

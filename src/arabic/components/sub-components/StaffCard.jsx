@@ -14,7 +14,7 @@ const StaffCard = ({ member }) => {
         <p className="text-sm text-end">{safeMember.role}</p>
       </div>
       <img
-        className="rounded-lg sm:rounded-none sm:rounded-l-lg w-36 h-36 my-5 sm:my-0"
+        className="rounded-lg  w-36 h-36 my-5 sm:my-0"
         src={safeMember.image}
         alt={`${safeMember.name} Avatar`}
       />
