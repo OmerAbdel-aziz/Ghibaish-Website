@@ -53,9 +53,9 @@ const Footer = () => {
       <aside className="place-self-end">
         <div className="flex flex-col md:flex-row gap-10 items-center justify-end">
           <p>
-            كلية غبيش للعلوم و التقنية
+            كلية غبيش للعلوم و التكنولوجيا
             <br />
-            رواد في مجال التعليم العالي منذ عام 1992
+            رواد في مجال التعليم العالي منذ عام 2017
             <br />
             <span>
               <a href="/admin/login">Admin</a>{" "}

@@ -17,7 +17,7 @@ const Hero = () => {
               backgroundImage: `url(${Header})`,
             }}
           >
-            <div className="hero-overlay bg-opacity-60"></div>
+            <div className="hero-overlay bg-opacity-20"></div>
             <div className="text-neutral-content text-center md:text-left md:justify-start md:items-start">
               <div className="max-w-md md:max-w-4xl md:justify-start md:text-left md:items-start md:right-[15%] md:relative px-10 md:px-0">
                 <h1 className="mb-5 text-5xl font-bold">
@@ -54,13 +54,13 @@ const Hero = () => {
               backgroundImage: `url(${GhTown})`,
             }}
           >
-            <div className="hero-overlay bg-opacity-60"></div>
+            {/* <div className="hero-overlay bg-opacity-60"></div> */}
             <div className="hero-content text-neutral-content text-center">
               <div className="max-w-md md:max-w-4xl md:justify-start md:text-left md:items-start md:right-[15%] md:relative px-10 md:px-0">
-                <h1 className="mb-5 text-5xl font-bold">
+                <h1 className="mb-5 text-5xl font-bold ">
                   Ghibaish City: Heart of Economy and Education
                 </h1>
-                <p className="mb-5">
+                <p className="mb-5 ">
                   Empowering students with education, skills, and values for a
                   brighter tomorrow. <br />
                   Explore our diverse programs and state-of-the-art facilities
@@ -91,13 +91,13 @@ const Hero = () => {
               backgroundImage: `url(${Exams})`,
             }}
           >
-            <div className="hero-overlay bg-opacity-60"></div>
+            <div className="hero-overlay bg-opacity-30"></div>
             <div className="hero-content text-neutral-content text-center">
               <div className="max-w-md md:max-w-2xl md:justify-start md:text-left md:items-start md:right-[30%] md:relative px-10 md:px-0">
-                <h1 className="mb-5 text-5xl font-bold">
+                <h1 className="mb-5 text-5xl font-bold ">
                   A Home for Learning, Growth, and Success
                 </h1>
-                <p className="mb-5">
+                <p className="mb-5 ">
                   Where passion meets purpose.
                   <br /> Join our community of scholars and achievers to unlock
                   your full potential.

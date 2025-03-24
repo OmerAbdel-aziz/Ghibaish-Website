@@ -18,10 +18,10 @@ const Hero = () => {
               backgroundImage: `url(${Header})`,
             }}
           >
-            <div className="hero-overlay bg-opacity-60"></div>
+            <div className="hero-overlay bg-opacity-20"></div>
             <div className="text-neutral-content text-center md:text-left md:justify-start md:items-start">
               <div className="max-w-md md:max-w-2xl md:justify-start md:text-right md:items-end md:left-[30%] md:relative px-10 md:px-0">
-                <h1 className="mb-5 text-5xl font-bold leading-normal">
+                <h1 className="mb-5 text-5xl font-bold leading-normal ">
                   مرحبا بكم في كلية غبيش للعلوم و التكنولوجيا
                 </h1>
                 <p className="mb-5">
@@ -54,10 +54,10 @@ const Hero = () => {
               backgroundImage: `url(${GhTown})`,
             }}
           >
-            <div className="hero-overlay bg-opacity-60"></div>
+            {/* <div className="hero-overlay bg-opacity-60"></div> */}
             <div className="hero-content text-neutral-content text-center">
               <div className="max-w-md md:max-w-2xl md:justify-start md:text-right md:items-end md:left-[30%] md:relative px-10 md:px-0">
-                <h1 className="mb-5 text-5xl font-bold leading-normal">
+                <h1 className="mb-5 text-5xl font-bold leading-normal ">
                   مدينة غبيش: قلب الاقتصاد والتعليم
                 </h1>
                 <p className="mb-5">
@@ -89,16 +89,18 @@ const Hero = () => {
               backgroundImage: `url(${Exams})`,
             }}
           >
-            <div className="hero-overlay bg-opacity-60"></div>
-            <div className="hero-content text-neutral-content text-center">
-              <div className="max-w-md md:max-w-2xl md:justify-start md:text-right md:items-end md:left-[50%] md:relative px-10 md:px-0">
-                <h1 className="mb-5 text-5xl font-bold leading-normal">
+            <div className="hero-overlay bg-opacity-30"></div>
+            <div className="hero-content text-base-100 text-center mx-8">
+              <div className="max-w-md md:max-w-2xl md:justify-start md:text-right md:items-end md:left-[50%] md:relative px-10 md:px-0 ">
+                <h1 className="mb-5 text-5xl font-bold leading-normal px-8">
                   نحو تميزٍ بلا حدود
                 </h1>
-                <p className="mb-5">
-                  نلتزم بتوفير تجربة تعليمية شاملة تُنمّي المهارات وتُطلق
-                  الإبداع لبناء مستقبل مشرق
-                </p>
+                <div className>
+                  <p className="mb-5  px-8">
+                    نلتزم بتوفير تجربة تعليمية شاملة تُنمّي المهارات وتُطلق
+                    الإبداع لبناء مستقبل مشرق
+                  </p>
+                </div>
               </div>
             </div>
           </div>

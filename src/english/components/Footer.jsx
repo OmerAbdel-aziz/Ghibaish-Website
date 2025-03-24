@@ -16,7 +16,7 @@ const Footer = () => {
             <p>
               Ghibaish College of Science & Technology
               <br />
-              Providing High education since 1992
+              Providing High education since 2017
               <br />
               <span>
                 <a href="admin/login">Admin</a>{" "}
