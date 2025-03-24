@@ -8,12 +8,12 @@ const Footer = () => {
       <footer
         className={`footer bg-[#1E1E1E] text-white p-10 relative ${
           isHomePage ? "top-[555px]" : "top-[35vh]"
-        } text-end`}
+        } `}
       >
         <aside>
-          <div className="flex flex-col md:flex-row gap-10 items-center">
+          <div className="flex flex-col md:flex-row gap-10 items-start justify-start">
             <img src={logo} alt="" className="w-20 h-20 " />
-            <p>
+            <p className="">
               Ghibaish College of Science & Technology
               <br />
               Providing High education since 2017
