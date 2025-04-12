@@ -28,8 +28,8 @@ const SingleNewsPage = ({}) => {
   return (
     <>
       <EnglishHeader title={newsData?.title} />
-      <section class="bg-white  relative top-[40vh] min-h-screen">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+      <section class="bg-white  relative   ">
+        <div class="py-8 px-4 ml-16 max-w-screen-xl   lg:px-6">
           <div class="max-w-full text-blax sm:text-lg  ">
             <p class="mb-4 font-light">{newsData?.content}</p>
           </div>

@@ -5,8 +5,8 @@ const AdmissionPage = () => {
   return (
     <>
       <EnglishHeader title="Admission " />
-      <section class="bg-white  relative top-[40vh] min-h-screen">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-20 lg:px-6">
+      <section class="bg-white  relative">
+        <div class=" px-4 ml-10 max-w-screen-xl  lg:px-6">
           <div class="max-w-screen-lg text-gray-500 sm:text-lg  ">
             <div>
               <h2 className="text-4xl text-black font-bold">This Department</h2>

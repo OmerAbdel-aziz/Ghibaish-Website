@@ -9,19 +9,18 @@ import { useEffect, useState } from "react";
 
 const Hero = () => {
   return (
-    <>
-      <div className="carousel w-full absolute top-0">
-        <div id="slide1" className="carousel-item relative w-full">
+    <div className="relative  min-h-screen">
+      <div className="carousel w-full h-full ">
+        {/* Slide 1 */}
+        <div id="slide1" className="carousel-item relative w-full h-full">
           <div
             className="hero min-h-screen"
-            style={{
-              backgroundImage: `url(${Header})`,
-            }}
+            style={{ backgroundImage: `url(${Header})` }}
           >
             <div className="hero-overlay bg-opacity-20"></div>
-            <div className="text-neutral-content text-center md:text-left md:justify-start md:items-start">
+            <div className="text-neutral-content text-center md:text-right px-10 md:px-0">
               <div className="max-w-md md:max-w-2xl md:justify-start md:text-right md:items-end md:left-[30%] md:relative px-10 md:px-0">
-                <h1 className="mb-5 text-5xl font-bold leading-normal ">
+                <h1 className="mb-5 text-5xl font-bold leading-normal">
                   مرحبا بكم في كلية غبيش للعلوم و التكنولوجيا
                 </h1>
                 <p className="mb-5">
@@ -42,22 +41,21 @@ const Hero = () => {
               href="#slide2"
               className="btn btn-circle bg-transparent md:btn md:btn-circle border-0 shadow-none"
             >
-              <span className="text-transparent md:text-black"> ❯</span>
+              <span className="text-transparent md:text-black"> ❯ </span>
             </a>
           </div>
         </div>
-        <div id="slide2" className="carousel-item relative w-full">
+
+        {/* Slide 2 */}
+        <div id="slide2" className="carousel-item relative w-full h-full">
           <div
             id="second-hero"
             className="hero min-h-screen"
-            style={{
-              backgroundImage: `url(${GhTown})`,
-            }}
+            style={{ backgroundImage: `url(${GhTown})` }}
           >
-            {/* <div className="hero-overlay bg-opacity-60"></div> */}
             <div className="hero-content text-neutral-content text-center">
               <div className="max-w-md md:max-w-2xl md:justify-start md:text-right md:items-end md:left-[30%] md:relative px-10 md:px-0">
-                <h1 className="mb-5 text-5xl font-bold leading-normal ">
+                <h1 className="mb-5 text-5xl font-bold leading-normal">
                   مدينة غبيش: قلب الاقتصاد والتعليم
                 </h1>
                 <p className="mb-5">
@@ -78,25 +76,25 @@ const Hero = () => {
               href="#slide3"
               className="btn btn-circle bg-transparent md:btn md:btn-circle border-0 shadow-none"
             >
-              <span className="text-transparent md:text-black"> ❯</span>
+              <span className="text-transparent md:text-black"> ❯ </span>
             </a>
           </div>
         </div>
-        <div id="slide3" className="carousel-item relative w-full">
+
+        {/* Slide 3 */}
+        <div id="slide3" className="carousel-item relative w-full h-full">
           <div
             className="hero min-h-screen"
-            style={{
-              backgroundImage: `url(${Exams})`,
-            }}
+            style={{ backgroundImage: `url(${Exams})` }}
           >
             <div className="hero-overlay bg-opacity-30"></div>
             <div className="hero-content text-base-100 text-center mx-8">
-              <div className="max-w-md md:max-w-2xl md:justify-start md:text-right md:items-end md:left-[50%] md:relative px-10 md:px-0 ">
+              <div className="max-w-md md:max-w-2xl md:justify-start md:text-right md:items-end md:left-[50%] md:relative px-10 md:px-0">
                 <h1 className="mb-5 text-5xl font-bold leading-normal px-8">
                   نحو تميزٍ بلا حدود
                 </h1>
-                <div className>
-                  <p className="mb-5  px-8">
+                <div>
+                  <p className="mb-5 px-8">
                     نلتزم بتوفير تجربة تعليمية شاملة تُنمّي المهارات وتُطلق
                     الإبداع لبناء مستقبل مشرق
                   </p>
@@ -115,12 +113,12 @@ const Hero = () => {
               href="#slide1"
               className="btn btn-circle bg-transparent md:btn md:btn-circle border-0 shadow-none"
             >
-              <span className="text-transparent md:text-black"> ❯</span>
+              <span className="text-transparent md:text-black"> ❯ </span>
             </a>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

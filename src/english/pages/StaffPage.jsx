@@ -106,9 +106,9 @@ const StaffPage = () => {
   return (
     <>
       <EnglishHeader title="College Management" />
-      <section class="bg-white dark:bg-gray-900 relative top-[300px]">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 ">
-          <div class=" text-gray-500 sm:text-lg dark:text-gray-400">
+      <section class="bg-white dark:bg-gray-900 relative items-start justify-center ml-8">
+        <div class="px-4 text-start max-w-screen-xl ">
+          <div class=" text-gray-800 sm:text-lg dark:text-gray-600">
             <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900">
               Message from the Founder and Chairman of the Board of Trustees
             </h2>
@@ -163,9 +163,9 @@ const StaffPage = () => {
           </div>
         </div>
       </section>
-      <div class=" pb-20 mx-auto max-w-[70%] md:max-w-[90%] relative top-[220px]">
+      <div class=" pb-10 mx-auto max-w-[70%] md:max-w-[90%] relative ">
         <div
-          class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-16 gap-y-8 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+          class="mx-auto grid max-w-2xl grid-cols-1 gap-x-16 gap-y-8 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
           lang="ar"
         >
           {staff.map((staff, index) => (

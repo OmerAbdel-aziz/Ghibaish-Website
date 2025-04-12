@@ -31,7 +31,7 @@ const News = ({ isHome = false }) => {
 
   return (
     <div
-      className="flex w-full flex-col px-4 md:px-10 relative top-[555px] bg-white"
+      className="flex w-full flex-col px-4 md:px-10 relative  bg-white"
       id="news"
     >
       <div className="border-b border-[#1E1E1E]/20 bg-white mx-auto max-w-[95%] ">

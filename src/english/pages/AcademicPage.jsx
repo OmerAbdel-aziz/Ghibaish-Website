@@ -4,8 +4,8 @@ const AcademicPage = () => {
   return (
     <>
       <EnglishHeader title="Academic Guidance" />
-      <section class="bg-white  relative top-[40vh] min-h-screen">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+      <section class="bg-white  relative ">
+        <div class=" px-4 ml-10 max-w-screen-xl lg:px-6">
           <div class="max-w-screen-lg text-gray-500 sm:text-lg  ">
             <p class="mb-4 font-light">
               This involves tasks assigned to faculty members to assist students

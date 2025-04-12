@@ -2,9 +2,9 @@ import React from "react";
 
 const ArabicDepartmentsPage = () => {
   return (
-    <>
+    <div className="relative min-h-screen">
       <div
-        className="hero absolute top-0 min-h-[50vh] w-full"
+        className="hero absolute  w-full"
         style={{
           backgroundImage: "url(../../assets/images/header2.jpg)",
         }}
@@ -12,7 +12,7 @@ const ArabicDepartmentsPage = () => {
       >
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-neutral-content text-center">
-          <div className="max-w-md md:max-w-2xl md:justify-END md:text-right md:items-end md:left-[55%] md:relative px-10 md:px-0">
+          <div className="max-w-md md:max-w-2xl md:justify-END md:text-right md:items-end md:left-[8vw] lg:left-[8vw] xl:left-[24vw] md:relative px-10 md:px-0">
             <div className="py-8">
               <a
                 href="/"
@@ -456,7 +456,7 @@ const ArabicDepartmentsPage = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

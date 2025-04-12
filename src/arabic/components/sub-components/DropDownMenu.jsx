@@ -32,7 +32,7 @@ function DropdownMenu({ title, item1, item2, item3 }) {
           <li className="w-full flex">
             <a
               href="#centers"
-              className="text-[10px] md:text-xs font-roboto text-end w-full hover:bg-gray-100"
+              className="text-[10px] md:text-xs font-roboto text-end w-full hover:bg-gray-100 font-bold"
               onClick={() => setIsDropdownOpen(false)}
             >
               {item1}
@@ -41,7 +41,7 @@ function DropdownMenu({ title, item1, item2, item3 }) {
           <li className="w-full flex justify-end">
             <a
               href="#centers"
-              className="text-[14px] md:text-xs font-roboto text-end w-full hover:bg-gray-100"
+              className="text-[14px] md:text-xs font-roboto text-end w-full hover:bg-gray-100 font-bold"
               onClick={() => setIsDropdownOpen(false)}
             >
               {item2}
@@ -50,7 +50,7 @@ function DropdownMenu({ title, item1, item2, item3 }) {
           <li className="w-full flex justify-end">
             <a
               href="#centers"
-              className="text-[14px] md:text-xs font-cairo text-end w-full hover:bg-gray-100"
+              className="text-[14px] md:text-xs font-cairo text-end w-full hover:bg-gray-100  font-bold"
               onClick={() => setIsDropdownOpen(false)}
             >
               {item3}

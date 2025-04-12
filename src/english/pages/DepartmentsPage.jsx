@@ -36,8 +36,8 @@ const DepartmentsPage = () => {
         }}
       >
         <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-neutral-content text-center">
-          <div className="max-w-screen-2xl md:justify-start md:text-left md:items-start md:right-[8vw] md:relative px-10 md:px-0">
+        <div className="hero-content text-neutral-content ">
+          <div className="max-w-screen-2xl md:justify-start md:text-left md:items-start md:right-[8vw] lg:right-[16vw] xl:right-[26vw] md:relative px-10 md:px-0">
             <div className="py-8">
               <a
                 href="/english"
@@ -102,7 +102,7 @@ const DepartmentsPage = () => {
         </div>
       </div>
       <section class="bg-white  relative top-[35vh] min-h-screen">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-2">
+        <div class="py-8 px-4 ml-16 max-w-screen-xl lg:py-16 lg:px-2">
           <div class="max-w-screen-lg text-gray-500 sm:text-lg  ">
             <div>
               <section>
@@ -197,9 +197,6 @@ const DepartmentsPage = () => {
                     environmental, social, and economic well-being.
                   </li>
                 </ul>
-                <div>
-                  <StaffCard member={staffData.member1} />
-                </div>
               </section>
 
               <section>
@@ -276,9 +273,6 @@ const DepartmentsPage = () => {
                     advancements.
                   </li>
                 </ul>
-                <div>
-                  <StaffCard member={staffData.member2} />
-                </div>
               </section>
               <section></section>
               <section>
@@ -326,9 +320,6 @@ const DepartmentsPage = () => {
                     knowledge to help identify and solve its economic problems.
                   </li>
                 </ul>
-                <div>
-                  <StaffCard member={staffData.member3} />
-                </div>
               </section>
 
               <section>
@@ -394,9 +385,6 @@ const DepartmentsPage = () => {
                     their chances in the labor market.
                   </li>
                 </ul>
-                <div>
-                  <StaffCard member={staffData.member4} />
-                </div>
               </section>
             </div>
           </div>

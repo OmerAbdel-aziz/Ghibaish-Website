@@ -18,9 +18,9 @@ const EnglishBookCard = ({ title, description, image, link }) => {
               <div className="">
                 <a
                   href={link}
-                  className="flex-row gap-2 items-center px-1 py-1 text-sm font-medium text-center text-white bg-[#1E1E1E] rounded-lg hover:bg-[#637C65] focus:ring-4 focus:outline-none focus:ring-blue-300 inline-flex"
+                  className="flex-row gap-2 items-center px-4 py-2 text-sm font-medium text-center text-white bg-[#1E1E1E] rounded-lg hover:bg-[#637C65] focus:ring-4 focus:outline-none focus:ring-blue-300 inline-flex"
                 >
-                  Learn More
+                  More
                   <svg
                     class="w-3.5 h-3.5 ms-2"
                     aria-hidden="true"

@@ -41,10 +41,10 @@ const CentersPage = () => {
     <>
       <EnglishHeader title="Research Centers" />
       <section
-        className="bg-white relative top-[250px] justify-start items-start flex flex-col w-full px-10 text-left"
+        className="bg-white relative py-8 justify-start items-start flex flex-col w-full px-10 text-left"
         lang="en"
       >
-        <div className="py-8 px-4 max-w-screen-xl lg:py-16 lg:px-6 text-left">
+        <div className=" px-4 max-w-screen-xl lg:px-6 text-left">
           <div className="w-full text-gray-500 sm:text-lg dark:text-gray-400">
             <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-900 text-left">
               Research and Projects
@@ -73,7 +73,7 @@ const CentersPage = () => {
             </ul>
           </div>
           <div
-            class="mx-auto mt-10 grid w-full grid-cols-2 md:grid-cols-3 gap-x-16 gap-y-8 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-5"
+            class="mx-auto mt-10 grid w-full grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-5"
             lang="ar"
           >
             {Books.map((book, index) => (
@@ -202,7 +202,7 @@ const CentersPage = () => {
             </ul>
           </div>
         </div>
-        <div className="py-8 px-4 max-w-screen-xl lg:py-16 lg:px-6 text-left">
+        <div className=" px-4 max-w-screen-xl lg:px-6 text-left">
           <div className="w-full text-gray-500 sm:text-lg dark:text-gray-400">
             <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-900 text-left">
               Um Gusai Center for Women and Children

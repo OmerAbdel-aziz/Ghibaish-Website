@@ -113,10 +113,10 @@ const ArabicStaffPage = () => {
     <>
       <Header title={"الهيئة الإدارية"} />
       <section
-        class="bg-white dark:bg-gray-900 relative top-[250px] justify-end items-end flex flex-col w-full px-10  "
+        class="bg-white dark:bg-gray-900 relative  justify-end items-end flex flex-col w-full px-10  "
         lang="ar"
       >
-        <div class="py-8 px-4 max-w-screen-xl lg:py-16 lg:px-6 text-end ">
+        <div class=" px-4 max-w-screen-xl lg:py-4 lg:px-6 text-end ">
           <div class="w-full text-gray-500 sm:text-lg dark:text-gray-400">
             <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900">
               كلمة المؤسس ورئيس مجلس الأمناء
@@ -141,10 +141,10 @@ const ArabicStaffPage = () => {
               الوطنيّة، والدّوليّة لبرامجها التّعليميّة.
             </p>
             <div className="py-8">
-              <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900">
+              <h2 class="text-4xl tracking-tight font-bold text-gray-900">
                 كلمة العميد
               </h2>
-              <p class="mb-4 font-light">
+              <p class=" font-light">
                 تميزت كلية غبيش للعلوم والتكنولوجيا ومنذ تأسيسها في العام 2017
                 برؤية ورسالة متقدمة طليعية، تلمست فيها احتياجات المجتمع المحلي
                 فأبصرت بها السبيل وفهمت خارطة التقدم والازدهار فكان التعليم
@@ -163,9 +163,9 @@ const ArabicStaffPage = () => {
           </div>
         </div>
       </section>
-      <div class=" mx-auto max-w-[70%] md:max-w-[90%] relative top-[220px] pb-20">
+      <div class=" mx-auto max-w-[70%] md:max-w-[90%] relative pb-20">
         <div
-          class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-16 gap-y-8 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+          class="mx-auto  grid max-w-2xl grid-cols-1 gap-x-16 gap-y-8 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
           lang="ar"
         >
           {staff.map((staff, index) => (

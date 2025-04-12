@@ -10,10 +10,10 @@ const About = () => {
   };
 
   return (
-    <div className="relative top-[555px] bg-white py-10" id="about">
+    <div className="relative  bg-white py-10" id="about">
       <div className="border-b border-[#1E1E1E]/20 bg-white">
         <div className="hero pb-10">
-          <div className="hero-content flex-col lg:flex-row-reverse justify-between lg:w-[90%]">
+          <div className="hero-content flex-col lg:flex-row-reverse justify-between items-cenetr md:items-start lg:w-[90%]">
             <img
               src={Logo}
               className="max-w-xs md:max-w-sm rounded-lg md:w-1/4"

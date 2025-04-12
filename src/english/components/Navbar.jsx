@@ -6,22 +6,23 @@ import { useEffect, useState } from "react";
 const Navbar = () => {
   const [bgOpacity, setBgOpacity] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const newOpacity = Math.min(scrollY / 200, 1);
-      setBgOpacity(newOpacity);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollY = window.scrollY;
+  //     const newOpacity = Math.min(scrollY / 200, 1);
+  //     setBgOpacity(newOpacity);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   return (
     <div
       className={`flex w-full bg-[#1E1E1E] text-black text-[18px] md:text-3xl md:font-medium z-50 justify-start items-center px-4 py-2 sticky top-0 transition duration-500`}
       style={{
-        backgroundColor: `rgba(54,87,60, ${bgOpacity})`,
+        backgroundColor: `rgba(54,87,60,1)`,
+        // ${bgOpacity}
       }}
     >
       <div className="flex items-center justify-between flex-row-reverse w-full md:w-fit">

@@ -18,9 +18,6 @@ const Footer = () => {
               <br />
               Providing High education since 2017
               <br />
-              <span>
-                <a href="admin/login">Admin</a>{" "}
-              </span>
             </p>
             <p></p>
           </div>

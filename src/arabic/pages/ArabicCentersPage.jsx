@@ -43,7 +43,7 @@ const ArabicCentersPage = () => {
     <>
       <Header title="مراكز الكلية " />
       <section
-        class="bg-white dark:bg-gray-900 relative top-[250px] justify-end items-end flex flex-col w-full px-10 "
+        class="bg-white dark:bg-gray-900 relative   justify-end items-end flex flex-col w-full px-10 "
         lang="ar"
       >
         <div class="py-8 px-4 max-w-screen-xl lg:py-16 lg:px-6 text-end ">
@@ -67,7 +67,7 @@ const ArabicCentersPage = () => {
             </ul>
           </div>
           <div className="flex justify-center items-center w-full">
-            <div class="mx-auto grid w-full bg-center grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-16 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+            <div class="mx-auto grid w-full  grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-5">
               {Books.map((book, index) => (
                 <BookCard
                   key={index}

@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer
       className={`footer bg-[#1E1E1E] text-white p-10 relative ${
-        isHomePage ? "top-[555px]" : "top-[35vh]"
+        isHomePage ? "top-0" : "top-[35vh]"
       } text-end`}
       lang="ar"
     >
@@ -57,9 +57,6 @@ const Footer = () => {
             <br />
             رواد في مجال التعليم العالي منذ عام 2017
             <br />
-            <span>
-              <a href="/admin/login">Admin</a>{" "}
-            </span>
           </p>
           <img src={logo} alt="" className="w-20 h-20 " />
         </div>

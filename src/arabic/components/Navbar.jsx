@@ -4,23 +4,23 @@ import { useEffect, useState } from "react";
 import DropDownMenu from "./sub-components/DropDownMenu";
 
 const Navbar = () => {
-  const [bgOpacity, setBgOpacity] = useState(0);
+  // const [bgOpacity, setBgOpacity] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const newOpacity = Math.min(scrollY / 200, 1);
-      setBgOpacity(newOpacity);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollY = window.scrollY;
+  //     const newOpacity = Math.min(scrollY / 200, 1);
+  //     setBgOpacity(newOpacity);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
   return (
     <div
       className={`flex w-full text-black text-[18px] md:text-3xl md:font-medium z-50 justify-start items-center px-4 py-2 sticky top-0 transition duration-500`}
       style={{
-        backgroundColor: `rgba(54, 87, 60, ${bgOpacity})`,
+        backgroundColor: `rgba(54, 87, 60, 1)`, // bgOpacity
       }}
     >
       <div
@@ -201,73 +201,14 @@ const Navbar = () => {
             item2="مركز المخزون المعرفي"
             item3="الأبحاث والمشاريع البحثية"
           />
-          {/* <li>
-            <details>
-              <summary className="text-[14px] md:text-lg font-roboto text-end">
-                توصيف المقررات
-              </summary>
-              <ul className="p-2 z-10 text-black min-w-[200px]">
-                
-                <li className="w-full flex justify-end">
-                  <a
-                    href="#centers"
-                    className="text-[10px] md:text-xs font-roboto text-end w-full hover:bg-gray-100"
-                  >
-                    مركز ام قصي للمرأة والطفل
-                  </a>
-                </li>
-                <li className="w-full flex justify-end">
-                  <a
-                    href="#centers"
-                    className="text-[14px] md:text-xs font-roboto text-end w-full hover:bg-gray-100"
-                  >
-                    مركز المخزون المعرفي
-                  </a>
-                </li>
-                <li className="w-full flex justify-end">
-                  <a
-                    href="#centers"
-                    className="text-[14px] md:text-xs font-cairo text-end w-full hover:bg-gray-100"
-                  >
-                    الأبحاث والمشاريع البحثية
-                  </a>
-                </li>
-              </ul>
-            </details>
-          </li> */}
-          <li>
-            <details>
-              <summary className="text-[14px] md:text-lg font-roboto text-end">
-                شئون الطلاب
-              </summary>
-              <ul className="p-2 z-10 text-black min-w-[200px]">
-                <li className="w-full flex justify-end">
-                  <a
-                    href="#centers"
-                    className="text-[10px] md:text-xs font-roboto text-end w-full hover:bg-gray-100"
-                  >
-                    القبول والتسجيل
-                  </a>
-                </li>
-                <li className="w-full flex justify-end">
-                  <a
-                    href="#centers"
-                    className="text-[14px] md:text-xs font-roboto text-end w-full hover:bg-gray-100"
-                  >
-                    الارشاد الاكاديمي
-                  </a>
-                </li>
-                <li className="w-full flex justify-end">
-                  <a
-                    href="#centers"
-                    className="text-[14px] md:text-xs font-cairo text-end w-full hover:bg-gray-100"
-                  >
-                    اقسام الكلية
-                  </a>
-                </li>
-              </ul>
-            </details>
-          </li>
+
+          <DropDownMenu
+            title="شئون الطلاب"
+            item1="القبول والتسجيل"
+            item2="الارشاد الاكاديمي"
+            item3="اقسام الكلية"
+          />
+
           <li>
             <a
               href="#about"

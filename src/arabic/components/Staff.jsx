@@ -70,7 +70,7 @@ const staff = [
 const Staff = () => {
   return (
     <div
-      className="flex w-full flex-col px-10 bg-white relative bottom-10 top-[555px]"
+      className="flex w-full flex-col px-10 bg-white relative bottom-10  "
       id="staff"
     >
       <div className="border-b  border-[#1E1E1E]/20 bg-white mx-auto max-w-[95%]">

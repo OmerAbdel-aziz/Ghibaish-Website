@@ -5,7 +5,7 @@ import Children from "../../../public/assets/images/children.jpg";
 const Centers = () => {
   return (
     <div
-      className="flex w-full flex-col px-10 py-10 bg-base-200 relative top-[555px]"
+      className="flex w-full flex-col px-10 py-10 bg-base-200 relative  "
       id="centers"
     >
       <section className="bg-white  rounded-lg">

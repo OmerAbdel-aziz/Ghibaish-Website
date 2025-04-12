@@ -29,10 +29,10 @@ const AllNewsPage = ({ isHome = false }) => {
     fetchNews();
   }, []);
   return (
-    <div className="bg-base-100">
+    <div className=" ">
       <EnglishHeader title="News" />
-      <div className="mx-10 my-10 bg-base-100">
-        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3 relative top-[200px]">
+      <div className="mx-10 my-10 md:my-0 ">
+        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3 relative ">
           {error && <p>{error}</p>}
           {posts.length > 0 ? (
             posts.map((post) => (

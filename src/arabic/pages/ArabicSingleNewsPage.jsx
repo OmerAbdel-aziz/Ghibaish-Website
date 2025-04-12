@@ -37,7 +37,7 @@ const ArabicSingleNewsPage = () => {
   return (
     <>
       <Header title={newsData.title} />
-      <div className="  py-10 px-10 md:px-20 relative top-[220px] bg-white pb-20">
+      <div className="  py-10 px-10 md:px-20 relative  bg-white pb-20">
         {newsData && (
           <div
             className="flex flex-col items-center justify-center gap-10 "

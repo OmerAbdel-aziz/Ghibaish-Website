@@ -1,8 +1,8 @@
-import StudentCard from "./sub-components/StudentCard";
+import Card from "./sub-components/StudentCard";
 import Admission from "../../../public/assets/images/addmission.jpg";
 import Academic from "../../../public/assets/images/academics.jpg";
 import Departments from "../../../public/assets/images/departments.jpg";
-
+import { motion } from "framer-motion";
 const Students = () => {
   return (
     <div
@@ -20,23 +20,51 @@ const Students = () => {
       </div>
       <div className="flex flex-col md:flex-row justify-center gap-16 px-10 md:px-0">
         {/* first card */}
-        <StudentCard
-          title={"Admission"}
-          link={"/english/admission"}
-          image={Admission}
-        />
+        <motion.div
+          transition={{
+            opacity: { duration: 0.5 },
+            y: { duration: 0.5 },
+            scale: { duration: 0.2, ease: "easeOut" },
+          }}
+          whileHover={{ scale: 1.05 }}
+        >
+          <Card
+            title={"Admission"}
+            link={"/english/admission"}
+            image={Admission}
+          />
+        </motion.div>
+
         {/* second card */}
-        <StudentCard
-          title={"Academics"}
-          link={"/english/academic"}
-          image={Academic}
-        />
+        <motion.div
+          transition={{
+            opacity: { duration: 0.5 },
+            y: { duration: 0.5 },
+            scale: { duration: 0.2, ease: "easeOut" },
+          }}
+          whileHover={{ scale: 1.05 }}
+        >
+          <Card
+            title={"Academics"}
+            link={"/english/academic"}
+            image={Academic}
+          />
+        </motion.div>
         {/* third card */}
-        <StudentCard
-          title={"Departments"}
-          link={"/english/departments"}
-          image={Departments}
-        />
+        <motion.div
+          transition={{
+            opacity: { duration: 0.5 },
+            y: { duration: 0.5 },
+            scale: { duration: 0.2, ease: "easeOut" },
+          }}
+          whileHover={{ scale: 1.05 }}
+        >
+          <Card
+            title={"Departments"}
+            link={"/english/departments"}
+            image={Departments}
+          />
+        </motion.div>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ const ArabicAdmissionPage = () => {
     <>
       <Header title={"القبول والتسجيل"} />
       <section
-        class="bg-white dark:bg-gray-900 relative top-[250px] justify-end items-end flex flex-col w-full px-10 "
+        class="bg-white dark:bg-gray-900 relative   justify-end items-end flex flex-col w-full px-10 "
         lang="ar"
       >
         <div class="py-8 px-4 max-w-screen-xl lg:py-16 lg:px-6 text-end ">

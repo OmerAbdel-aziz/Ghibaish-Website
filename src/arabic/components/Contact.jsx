@@ -32,10 +32,7 @@ const Contact = () => {
   });
 
   return (
-    <div
-      className="flex w-full flex-col bg-white relative top-[555px] "
-      id="contact"
-    >
+    <div className="flex w-full flex-col bg-white relative   " id="contact">
       <section className="px-8 py-8 lg:py-16">
         <div className="container mx-auto text-center">
           <div className="mx-auto max-w-2xl text-center mb-16">
