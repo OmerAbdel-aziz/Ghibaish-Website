@@ -11,7 +11,7 @@ import {
 } from "../../components/ui/table";
 import { supabase } from "../../utils/supabase";
 
-const StaffTable = () => {
+const NewStaffTable = () => {
   const [staff, setStaff] = useState([]);
   const [error, setError] = useState(null);
 
@@ -19,7 +19,7 @@ const StaffTable = () => {
     const fetchStaff = async () => {
       try {
         const { data, error } = await supabase
-          .from("staff")
+          .from("new_staff")
           .select("id, name_en, role_en"); // Select only needed fields
 
         if (error) {
@@ -28,7 +28,7 @@ const StaffTable = () => {
 
         setStaff(data);
       } catch (error) {
-        setError("Could not fetch staff: " + error.message);
+        setError("Could not fetch new_staff: " + error.message);
         setStaff([]);
         console.error(error);
       }
@@ -42,9 +42,9 @@ const StaffTable = () => {
 
   return (
     <div className="p-5 w-full px-10">
-      <h3 className="text-lg md:text-2xl font-semibold mb-5">Staff Members</h3>
+      <h3 className="text-lg md:text-2xl font-semibold mb-5">New Staff Submissions</h3>
       <Table>
-        <TableCaption>A list of staff members.</TableCaption>
+        <TableCaption>A list of submitted staff members awaiting review.</TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead>Name</TableHead>
@@ -63,10 +63,10 @@ const StaffTable = () => {
               </TableCell>
               <TableCell className="text-right">
                 <a
-                  href={`/admin/edit-staff/${member.id}`}
-                  className="inline-flex flex-row-reverse gap-2 items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#1E1E1E] rounded-lg hover:bg-[#637C65] focus:ring-4 focus:outline-none focus:ring-blue-300 hidden md:inline-flex relative bottom-0"
+                  href={`/admin/review-new-staff/${member.id}`}
+                  className="hidden md:inline-flex flex-row-reverse gap-2 items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#1E1E1E] rounded-lg hover:bg-[#637C65] focus:ring-4 focus:outline-none focus:ring-blue-300 relative bottom-0"
                 >
-                  Edit Staff / تعديل عضو المجلس
+                  Review / راجع
                 </a>
               </TableCell>
             </TableRow>
@@ -78,4 +78,4 @@ const StaffTable = () => {
   );
 };
 
-export default StaffTable;
+export default NewStaffTable;

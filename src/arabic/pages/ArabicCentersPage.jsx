@@ -1,6 +1,6 @@
 import React from "react";
 import Center2 from "../../../public/assets/images/Center2.png";
-import Center1 from "../../../public/assets/images/CenterAR.png";
+import Center1 from "../../../public/assets/images/CenterAr.png";
 import Header from "../components/sub-components/Header";
 import BookCard from "../components/sub-components/BookCard";
 import gum from "../../../public/assets/images/gum.jpg";

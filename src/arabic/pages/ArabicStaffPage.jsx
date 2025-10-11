@@ -79,9 +79,12 @@ import Alhaj from "../../../public/assets/images/Alhaj.jpg";
 const ArabicStaffPage = () => {
   const [staff, setStaff] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [faculty, setFaculty] = useState([]);
+  const [facultyLoading, setFacultyLoading] = useState(true);
 
   useEffect(() => {
     fetchStaff();
+    fetchFaculty();
   }, []);
 
   const fetchStaff = async () => {
@@ -92,6 +95,8 @@ const ArabicStaffPage = () => {
         .select("name_ar, role_ar, image_url")
         .order("id", { ascending: true });
 
+        console.log("Fetched staff data:", data);
+
       if (error) throw error;
 
       // Map the data to match your component's expected format
@@ -101,11 +106,37 @@ const ArabicStaffPage = () => {
         image: member.image_url, // This will be a URL string
       }));
 
+      console.log("Formatted staff data:", formattedStaff);
+
       setStaff(formattedStaff);
     } catch (error) {
       console.error("Error fetching staff:", error.message);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const fetchFaculty = async () => {
+    try {
+      setFacultyLoading(true);
+      const { data, error } = await supabase
+        .from("new_staff")
+        .select("name_ar, role_ar, image_url")
+        .order("id", { ascending: true });
+
+      if (error) throw error;
+
+      const formatted = data.map((member) => ({
+        name: member.name_ar,
+        role: member.role_ar,
+        image: member.image_url,
+      }));
+
+      setFaculty(formatted);
+    } catch (error) {
+      console.error("Error fetching new_staff:", error.message);
+    } finally {
+      setFacultyLoading(false);
     }
   };
 
@@ -163,9 +194,14 @@ const ArabicStaffPage = () => {
           </div>
         </div>
       </section>
-      <div class=" mx-auto max-w-[70%] md:max-w-[90%] relative pb-20">
+      <div className=" mx-auto max-w-[70%] md:max-w-[90%] relative pb-20">
+        {/* Board of Trustees */}
+        <div className="px-4 mb-8">
+          <h3 className="text-2xl font-bold text-gray-900 text-end">مجلس الأمناء</h3>
+        </div>
+
         <div
-          class="mx-auto  grid max-w-2xl grid-cols-1 gap-x-16 gap-y-8 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+          class="mx-auto  grid max-w-2xl grid-cols-1 gap-x-16 gap-y-8 border-t border-gray-200 pt-6 sm:mt-6 sm:pt-6 lg:mx-0 lg:max-w-none lg:grid-cols-3"
           lang="ar"
         >
           {staff.map((staff, index) => (
@@ -176,6 +212,32 @@ const ArabicStaffPage = () => {
               transition={{ delay: index * 0.1 }}
             >
               <StaffCard member={staff} />
+            </motion.div>
+          ))}
+        </div>
+
+        {/* separator */}
+        <div className="my-10 px-4">
+          <hr className="border-t border-gray-200" />
+        </div>
+
+        {/* Faculty Members (from new_staff) */}
+        <div className="px-4 mb-8">
+          <h3 className="text-2xl font-bold text-gray-900 text-end">هيئة التدريس</h3>
+        </div>
+
+        <div
+          class="mx-auto  grid max-w-2xl grid-cols-1 gap-x-16 gap-y-8 pt-6 sm:mt-6 sm:pt-6 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+          lang="ar"
+        >
+          {faculty.map((member, index) => (
+            <motion.div
+              key={`faculty-${index}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <StaffCard member={member} />
             </motion.div>
           ))}
         </div>

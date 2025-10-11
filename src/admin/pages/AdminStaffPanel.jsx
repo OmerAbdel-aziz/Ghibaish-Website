@@ -1,6 +1,7 @@
 import React from "react";
 // import AddStaffForm from "./components/AddStaffForm"; // Assuming this is in your components folder
 import StaffTable from "../components/StaffTable";
+import NewStaffTable from "../components/NewStaffTable";
 
 const AdminStaffPanel = () => {
   return (
@@ -33,6 +34,12 @@ const AdminStaffPanel = () => {
         </h3>
       </div>
       <StaffTable />
+      <div className="mx-10 my-8">
+        <hr className="border-t border-gray-200" />
+      </div>
+      <div className="px-10">
+        <NewStaffTable />
+      </div>
     </div>
   );
 };

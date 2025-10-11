@@ -70,9 +70,12 @@ import Avatar from "../../../public/assets/images/Avatar.webp";
 const StaffPage = () => {
   const [staff, setStaff] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [faculty, setFaculty] = useState([]);
+  const [facultyLoading, setFacultyLoading] = useState(true);
 
   useEffect(() => {
     fetchStaff();
+    fetchFaculty();
   }, []);
 
   const fetchStaff = async () => {
@@ -96,6 +99,30 @@ const StaffPage = () => {
       console.error("Error fetching staff:", error.message);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const fetchFaculty = async () => {
+    try {
+      setFacultyLoading(true);
+      const { data, error } = await supabase
+        .from("new_staff")
+        .select("name_en, role_en, image_url")
+        .order("id", { ascending: true });
+
+      if (error) throw error;
+
+      const formatted = data.map((member) => ({
+        name: member.name_en,
+        role: member.role_en,
+        image: member.image_url,
+      }));
+
+      setFaculty(formatted);
+    } catch (error) {
+      console.error("Error fetching new_staff:", error.message);
+    } finally {
+      setFacultyLoading(false);
     }
   };
 
@@ -163,10 +190,15 @@ const StaffPage = () => {
           </div>
         </div>
       </section>
-      <div class=" pb-10 mx-auto max-w-[70%] md:max-w-[90%] relative ">
+      <div className=" pb-10 mx-auto max-w-[70%] md:max-w-[90%] relative ">
+        {/* Board of Trustees */}
+        <div className="px-4 mb-8">
+          <h3 className="text-2xl font-bold text-gray-900">Board of Trustees</h3>
+        </div>
+
         <div
-          class="mx-auto grid max-w-2xl grid-cols-1 gap-x-16 gap-y-8 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
-          lang="ar"
+          class="mx-auto grid max-w-2xl grid-cols-1 gap-x-16 gap-y-8 border-t border-gray-200 pt-6 sm:mt-6 sm:pt-6 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+          lang="en"
         >
           {staff.map((staff, index) => (
             <motion.div
@@ -176,6 +208,31 @@ const StaffPage = () => {
               transition={{ delay: index * 0.1 }}
             >
               <StaffCard member={staff} />
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="my-10 px-4">
+          <hr className="border-t border-gray-200" />
+        </div>
+
+        {/* Faculty Members (from new_staff) */}
+        <div className="px-4 mb-8">
+          <h3 className="text-2xl font-bold text-gray-900">Faculty Members</h3>
+        </div>
+
+        <div
+          class="mx-auto grid max-w-2xl grid-cols-1 gap-x-16 gap-y-8 pt-6 sm:mt-6 sm:pt-6 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+          lang="en"
+        >
+          {faculty.map((member, index) => (
+            <motion.div
+              key={`faculty-${index}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <StaffCard member={member} />
             </motion.div>
           ))}
         </div>

@@ -1,0 +1,17 @@
+name: Run Supabase Cron Job
+
+on:
+  schedule:
+    # Runs every day at 09:00 UTC (adjust as needed)
+    - cron: "0 9 * * *"
+  workflow_dispatch: # allows manual trigger too
+
+jobs:
+  call-supabase-function:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Supabase Edge Function
+        run: |
+          curl -X POST  https://supabase.com/dashboard/project/udbwzlcaeagkzcywldsi/functions \
+            -H "Content-Type: application/json" \
+            -d '{"triggered_by": "GitHub Action"}'

@@ -1,7 +1,7 @@
 import Card from "./sub-components/StudentCard";
 import Admission from "../../../public/assets/images/addmission.jpg";
-import Academic from "../../../public/assets/images/academics.jpg";
-import Departments from "../../../public/assets/images/departments.jpg";
+import Academic from "../../../public/assets/images/Academics.jpg";
+import Departments from "../../../public/assets/images/Departments.jpg";
 import { motion } from "framer-motion";
 const Students = () => {
   return (

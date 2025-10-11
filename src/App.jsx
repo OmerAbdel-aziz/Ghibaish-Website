@@ -29,6 +29,7 @@ import AdminLayout from "./layout/AdminLayout";
 import AdminStaffPanel from "./admin/pages/AdminStaffPanel";
 import AddStaffForm from "./admin/components/AddStaffForm";
 import StaffEditingPanel from "./admin/pages/StaffEditingPanel";
+import NewStaffEditingPanel from "./admin/pages/NewStaffEditingPanel";
 import NotFound from "./english/pages/NotFound";
 import PostEditingPanel from "./admin/pages/PostEditingPanel";
 import PostAddingPage from "./admin/pages/PostAddingPage";
@@ -154,6 +155,14 @@ function App() {
                   element={
                     <PrivateRoute>
                       <StaffEditingPanel />
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path="/review-new-staff/:id"
+                  element={
+                    <PrivateRoute>
+                      <NewStaffEditingPanel />
                     </PrivateRoute>
                   }
                 />
